@@ -134,8 +134,34 @@ layout — e assuma o custo da renderização dinâmica.
 ## Variáveis de ambiente
 
 Copie `.env.example` para `.env.local`. Só existe uma variável:
-`NEXT_PUBLIC_SITE_URL`, que alimenta canonical, sitemap, robots e Open Graph.
-Defina-a em produção.
+`NEXT_PUBLIC_SITE_URL`, que alimenta canonical, sitemap, robots, Open Graph e
+os dados estruturados.
+
+**Ela é opcional, mas se existir precisa do protocolo.** A resolução é feita em
+`resolverUrlDoSite`, em `src/lib/site-config.ts`, nesta ordem:
+
+1. `NEXT_PUBLIC_SITE_URL`;
+2. `NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL` — domínio de produção que a
+   Vercel injeta sozinha (estável entre deploys, ao contrário da URL de cada
+   deploy, que não serve para canonical);
+3. o domínio institucional.
+
+Valores vazios, só com espaços, sem protocolo ou com barras sobrando são
+normalizados ou descartados. Isso não é preciosismo: `siteConfig.url` alimenta
+o `metadataBase` do layout, que roda `new URL()` na avaliação do módulo — e
+`new URL('')` lança `ERR_INVALID_URL`, derrubando o build inteiro. Foi o que
+aconteceu no primeiro deploy na Vercel.
+
+### Sobre os avisos do build na Vercel
+
+Dois avisos aparecem e **não** indicam problema:
+
+- `eslint@9.39.5 is no longer supported` — o ESLint 10 quebra o
+  `eslint-plugin-react` que o `eslint-config-next` empacota
+  (`contextOrFilename.getFilename is not a function`). O 9.39.5 é a versão que
+  o preset do Next suporta hoje, e o lint não roda durante o `next build`.
+- `allow-scripts: unrs-resolver` — script de instalação de um resolver do
+  ESLint. Não participa do build.
 
 ## Mapa da sede
 

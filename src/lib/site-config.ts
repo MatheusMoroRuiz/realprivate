@@ -22,6 +22,55 @@ export function whatsappUrl(mensagem?: string): string {
   return `${base}?text=${encodeURIComponent(mensagem)}`;
 }
 
+/** Domínio institucional. Usado quando nenhuma variável de ambiente resolve. */
+const URL_PADRAO = 'https://www.realprivate.com.br';
+
+/**
+ * Normaliza um valor de ambiente em uma origem absoluta, ou devolve `null`.
+ *
+ * Aceita valor sem protocolo (as variáveis de domínio da Vercel vêm assim,
+ * ex.: `realprivate.vercel.app`) e rejeita vazio, espaços em branco e lixo.
+ */
+function normalizarUrl(valor: string | undefined): string | null {
+  const limpo = valor?.trim().replace(/\/+$/, '');
+  if (!limpo) return null;
+
+  const comProtocolo = /^https?:\/\//i.test(limpo) ? limpo : `https://${limpo}`;
+  try {
+    return new URL(comProtocolo).origin;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Resolve a URL pública do site.
+ *
+ * Esta função existe por um motivo concreto: `siteConfig.url` alimenta o
+ * `metadataBase` do layout, que roda `new URL()` na avaliação do módulo. Como
+ * `new URL()` lança em qualquer entrada malformada, uma variável vazia ou sem
+ * protocolo derruba o build inteiro — foi exatamente o que aconteceu no
+ * primeiro deploy na Vercel (`ERR_INVALID_URL`). Aqui nada lança: cada
+ * candidato é validado e, se nenhum servir, cai no domínio institucional.
+ *
+ * Ordem de resolução:
+ *  1. `NEXT_PUBLIC_SITE_URL` — o domínio definitivo, quando configurado;
+ *  2. `NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL` — domínio de produção que a
+ *     Vercel injeta sozinha (estável entre deploys, ao contrário da URL de
+ *     cada deploy, que não serve para canonical);
+ *  3. o domínio institucional.
+ *
+ * Os acessos a `process.env` são estáticos de propósito: é assim que o Next
+ * consegue substituí-los em tempo de build, inclusive no pacote do cliente.
+ */
+function resolverUrlDoSite(): string {
+  return (
+    normalizarUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
+    normalizarUrl(process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL) ??
+    URL_PADRAO
+  );
+}
+
 export const siteConfig = {
   nome: 'Real Private',
   razaoSocial: 'Real Private Securitizadora S/A',
@@ -30,10 +79,11 @@ export const siteConfig = {
   fundadaEm: 2004,
   locale: 'pt-BR',
   /**
-   * Usado para canonical, sitemap, robots e Open Graph. Defina
-   * NEXT_PUBLIC_SITE_URL em produção (ex.: https://www.realprivate.com.br).
+   * Origem absoluta, sempre válida e sem barra final. Alimenta canonical,
+   * sitemap, robots, Open Graph e os dados estruturados. Veja
+   * `resolverUrlDoSite` acima para a ordem de resolução.
    */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.realprivate.com.br').replace(/\/+$/, ''),
+  url: resolverUrlDoSite(),
 
   contato: {
     whatsappE164: WHATSAPP_NUMBER_E164,
