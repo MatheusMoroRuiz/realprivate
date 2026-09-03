@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Real Private Securitizadora S/A — Documentação do Projeto</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ---------------------------------------------------------------- *
+       * Tokens — mesma paleta e tipografia do site
+       * ---------------------------------------------------------------- */
+      :root {
+        --ink-950: #0b1f19;
+        --ink-900: #102b22;
+        --ink-700: #1b4535;
+        --ink-500: #2f6a50;
+        --ink-400: #43544b;
+        --ink-300: #57695f;
+        --sage-600: #a9c486;
+        --sage-500: #bad19a;
+        --sage-400: #cfe0b6;
+        --sage-300: #e7f0db;
+        --sage-100: #f6f9f2;
+        --canvas: #f7f6f2;
+        --canvas-alt: #efeee7;
+        --linha: rgb(11 31 25 / 0.12);
+        --display: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+        --sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--sans);
+        color: var(--ink-900);
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .pagina {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        padding: 18mm 20mm 16mm;
+        background: var(--canvas);
+        overflow: hidden;
+        break-after: page;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pagina:last-child {
+        break-after: auto;
+      }
+
+      /* ---------------------------------------------------------------- *
+       * Capa
+       * ---------------------------------------------------------------- */
+      .capa {
+        background: var(--ink-900);
+        color: var(--sage-100);
+        padding: 22mm 20mm;
+        justify-content: space-between;
+      }
+
+      .capa-fitas {
+        position: absolute;
+        right: -14mm;
+        bottom: -18mm;
+        display: flex;
+        align-items: flex-end;
+        gap: 7mm;
+        opacity: 0.5;
+      }
+
+      .capa-fitas span {
+        display: block;
+        border-radius: 22mm 22mm 0 0;
+      }
+
+      .capa-brilho {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          110% 80% at 82% 10%,
+          rgb(47 106 80 / 0.55) 0%,
+          rgb(16 43 34 / 0) 62%
+        );
+      }
+
+      .capa-conteudo {
+        position: relative;
+      }
+
+      .capa-marca {
+        display: flex;
+        align-items: center;
+        gap: 5mm;
+      }
+
+      .capa-marca img {
+        width: 20mm;
+        height: 20mm;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .capa-marca .nome {
+        font-family: var(--display);
+        font-size: 24pt;
+        line-height: 1;
+        color: var(--sage-100);
+      }
+
+      .capa-marca .assinatura {
+        margin-top: 2.5mm;
+        font-size: 7pt;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: rgb(186 209 154 / 0.85);
+      }
+
+      .capa-etiqueta {
+        margin-top: 26mm;
+        display: flex;
+        align-items: center;
+        gap: 4mm;
+        font-size: 7.5pt;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: var(--sage-500);
+      }
+
+      .capa-etiqueta::before {
+        content: '';
+        display: block;
+        width: 10mm;
+        height: 1px;
+        background: var(--sage-500);
+      }
+
+      .capa h1 {
+        margin: 6mm 0 0;
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: 40pt;
+        line-height: 1.06;
+        letter-spacing: -0.015em;
+        max-width: 15em;
+      }
+
+      .capa h1 em {
+        font-style: italic;
+        color: var(--sage-400);
+      }
+
+      .capa-resumo {
+        margin: 8mm 0 0;
+        max-width: 30em;
+        font-size: 10.5pt;
+        line-height: 1.65;
+        color: rgb(241 245 236 / 0.82);
+      }
+
+      .capa-rodape {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 12mm;
+        padding-top: 8mm;
+        border-top: 1px solid rgb(186 209 154 / 0.25);
+      }
+
+      .capa-rodape h2 {
+        margin: 0 0 3mm;
+        font-size: 7pt;
+        font-weight: 500;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--sage-500);
+      }
+
+      .capa-rodape p {
+        margin: 0;
+        font-size: 9.5pt;
+        line-height: 1.6;
+        color: rgb(241 245 236 / 0.85);
+      }
+
+      /* ---------------------------------------------------------------- *
+       * Páginas internas
+       * ---------------------------------------------------------------- */
+      .topo {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-bottom: 3mm;
+        border-bottom: 1px solid var(--linha);
+        font-size: 7.5pt;
+        color: var(--ink-300);
+      }
+
+      .topo .marca {
+        font-family: var(--display);
+        font-size: 11pt;
+        color: var(--ink-900);
+      }
+
+      .eyebrow {
+        margin-top: 10mm;
+        font-size: 7.5pt;
+        font-weight: 500;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: var(--ink-500);
+      }
+
+      h2.titulo {
+        margin: 4mm 0 0;
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: 26pt;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        color: var(--ink-900);
+      }
+
+      h3 {
+        margin: 6.5mm 0 2.5mm;
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: 14pt;
+        line-height: 1.2;
+        color: var(--ink-900);
+      }
+
+      h3 .rota {
+        font-family: var(--sans);
+        font-size: 8.5pt;
+        color: var(--ink-300);
+      }
+
+      p {
+        margin: 4mm 0 0;
+        font-size: 9.5pt;
+        line-height: 1.65;
+        color: var(--ink-400);
+      }
+
+      .conteudo {
+        flex: 1;
+      }
+
+      .rodape {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 4mm;
+        border-top: 1px solid var(--linha);
+        font-size: 7.5pt;
+        color: var(--ink-300);
+      }
+
+      /* Listas ------------------------------------------------------- */
+      ul.itens {
+        margin: 4mm 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      ul.itens li {
+        position: relative;
+        padding: 0 0 0 7mm;
+        margin-top: 2.3mm;
+        font-size: 9.5pt;
+        line-height: 1.6;
+        color: var(--ink-400);
+      }
+
+      ul.itens li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2.1mm;
+        width: 4mm;
+        height: 1px;
+        background: var(--ink-500);
+      }
+
+      ul.itens li strong {
+        color: var(--ink-900);
+        font-weight: 600;
+      }
+
+      /* Tabelas ------------------------------------------------------ */
+      table {
+        width: 100%;
+        margin-top: 5mm;
+        border-collapse: collapse;
+        font-size: 9pt;
+      }
+
+      thead th {
+        padding: 3mm 3mm 2.5mm 0;
+        text-align: left;
+        font-size: 7pt;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-500);
+        border-bottom: 1px solid var(--ink-500);
+      }
+
+      tbody td {
+        padding: 3mm 3mm 3mm 0;
+        vertical-align: top;
+        line-height: 1.55;
+        color: var(--ink-400);
+        border-bottom: 1px solid var(--linha);
+      }
+
+      tbody td:first-child {
+        color: var(--ink-900);
+        font-weight: 500;
+        width: 27%;
+      }
+
+      td .ok {
+        color: var(--ink-700);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      /* Blocos de destaque ------------------------------------------- */
+      .nota {
+        margin-top: 6mm;
+        padding: 4mm 5mm;
+        background: var(--sage-300);
+        border-left: 2px solid var(--ink-500);
+        font-size: 8.5pt;
+        line-height: 1.6;
+        color: var(--ink-700);
+      }
+
+      .nota strong {
+        color: var(--ink-900);
+      }
+
+      .destaque-escuro {
+        margin-top: 6mm;
+        padding: 5mm 6mm;
+        background: var(--ink-900);
+        color: var(--sage-100);
+        font-size: 9pt;
+        line-height: 1.6;
+      }
+
+      .destaque-escuro strong {
+        color: var(--sage-400);
+      }
+
+      /* Paleta ------------------------------------------------------- */
+      .paleta {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 3mm;
+        margin-top: 5mm;
+      }
+
+      .cor .amostra {
+        height: 22mm;
+        border-radius: 1mm;
+        border: 1px solid var(--linha);
+      }
+
+      .cor .nome {
+        margin-top: 2mm;
+        font-size: 7.5pt;
+        line-height: 1.35;
+        color: var(--ink-900);
+      }
+
+      .cor .hex {
+        font-size: 7pt;
+        color: var(--ink-300);
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* A tabela de testes tem 13 linhas: espaçamento reduzido para caber na página. */
+      table.compacta {
+        font-size: 8.5pt;
+      }
+
+      table.compacta tbody td {
+        padding: 2mm 3mm 2mm 0;
+      }
+
+      table.compacta + .nota {
+        margin-top: 5mm;
+      }
+
+      .colunas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8mm;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================================================== CAPA -->
+    <section class="pagina capa">
+      <span class="capa-brilho"></span>
+      <span class="capa-fitas">
+        <span style="width: 10mm; height: 40mm; background: linear-gradient(180deg, #bad19a, #2f6a50)"></span>
+        <span style="width: 13mm; height: 68mm; background: linear-gradient(180deg, #cfe0b6, #255140)"></span>
+        <span style="width: 16mm; height: 100mm; background: linear-gradient(180deg, #a9c486, #1b4535)"></span>
+        <span style="width: 20mm; height: 134mm; background: linear-gradient(180deg, #e7f0db, #123328)"></span>
+      </span>
+
+      <div class="capa-conteudo">
+        <div class="capa-marca">
+          <img src="logo.png" alt="" />
+          <div>
+            <div class="nome">Real Private</div>
+            <div class="assinatura">Securitizadora S/A · desde 2004</div>
+          </div>
+        </div>
+
+        <div class="capa-etiqueta">Documentação de entrega — projeto web</div>
+        <h1>Site institucional <em>Real Private</em> Securitizadora</h1>
+        <p class="capa-resumo">
+          Documento de entrega técnica: o que foi desenvolvido, quais funcionalidades o site
+          possui e os testes realizados antes da publicação.
+        </p>
+      </div>
+
+      <div class="capa-rodape">
+        <div>
+          <h2>Preparado para</h2>
+          <p>
+            Real Private Securitizadora S/A<br />
+            Rua Siqueira Campos, 699 — Centro<br />
+            Presidente Prudente/SP
+          </p>
+        </div>
+        <div>
+          <h2>Desenvolvimento</h2>
+          <p>
+            Codivo Desenvolvimento Web<br />
+            Setembro de 2026
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== 1. VISÃO GERAL -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Visão geral</div>
+        <h2 class="titulo">Sumário executivo</h2>
+
+        <p>
+          Foi desenvolvido o novo site institucional da Real Private Securitizadora S/A,
+          construído como uma aplicação web moderna (não um site em HTML estático tradicional,
+          nem WordPress), com cinco páginas, carrossel de parceiros, mapa da sede, otimização
+          para mecanismos de busca (SEO), cabeçalhos de segurança e cuidados de acessibilidade.
+          Todas as páginas são pré-geradas — o servidor entrega a página pronta a cada visita,
+          o que resulta em carregamento imediato e melhor posicionamento no Google.
+        </p>
+        <p>
+          Os textos foram escritos a partir do Documento de Direcionamento Estratégico
+          Institucional da Real Private — propósito, visão, missão, valores, posicionamento,
+          perfil de cliente ideal e governança de atendimento —, e o layout segue o design
+          premium aprovado. Este documento resume o que foi entregue, como cada página
+          funciona e quais verificações foram feitas antes da entrega.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Resumo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Páginas entregues</td>
+              <td>5 — Início, Quem somos, O que fazemos, Para empresas, Contato</td>
+            </tr>
+            <tr>
+              <td>Tecnologia</td>
+              <td>
+                Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 (stack moderna, sem
+                WordPress ou page builders)
+              </td>
+            </tr>
+            <tr>
+              <td>Renderização</td>
+              <td>100% estática — as 11 rotas do site pré-geradas (carregamento imediato)</td>
+            </tr>
+            <tr>
+              <td>Idioma / mercado</td>
+              <td>
+                Português (Brasil), conteúdo específico para securitização e antecipação de
+                recebíveis em Presidente Prudente/SP
+              </td>
+            </tr>
+            <tr>
+              <td>Coleta de dados</td>
+              <td>
+                Nenhuma — o site não tem formulários, cookies próprios nem rastreamento. O
+                contato acontece por WhatsApp e telefone
+              </td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>Pronto para revisão do cliente; pendências listadas na seção final</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer class="rodape"><span>Página 1</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 2. TECNOLOGIA -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Tecnologia</div>
+        <h2 class="titulo">Stack tecnológico</h2>
+
+        <p>
+          O site foi construído com as versões estáveis mais recentes das principais
+          tecnologias do mercado para aplicações web — a mesma base usada por grandes empresas
+          de tecnologia, escolhida para garantir velocidade, segurança e facilidade de
+          manutenção no longo prazo.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Camada</th>
+              <th>Tecnologia</th>
+              <th>Por que foi escolhida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Framework</td>
+              <td>Next.js 16</td>
+              <td>
+                Gera páginas estáticas ultrarrápidas e cuida automaticamente de SEO, imagens e
+                cabeçalhos de segurança
+              </td>
+            </tr>
+            <tr>
+              <td>Interface</td>
+              <td>React 19</td>
+              <td>
+                Padrão de mercado. Usado em modo servidor: as seções de conteúdo não enviam
+                JavaScript ao navegador
+              </td>
+            </tr>
+            <tr>
+              <td>Linguagem</td>
+              <td>TypeScript 5.9 (modo estrito)</td>
+              <td>Reduz drasticamente a chance de bugs chegarem à produção</td>
+            </tr>
+            <tr>
+              <td>Estilo visual</td>
+              <td>Tailwind CSS 4</td>
+              <td>Consistência visual e arquivos de estilo enxutos, sem CSS não utilizado</td>
+            </tr>
+            <tr>
+              <td>Tipografia</td>
+              <td>Bodoni Moda + Instrument Sans</td>
+              <td>
+                Mesmas fontes do design aprovado, servidas pelo próprio site (mais rápido e sem
+                enviar dados dos visitantes ao Google)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="destaque-escuro">
+          <strong>Apenas três dependências de produção</strong> — <code>next</code>,
+          <code>react</code> e <code>react-dom</code>. Não foram usados jQuery, Bootstrap, page
+          builders (Elementor, WPBakery) nem WordPress. O código é inteiramente controlado pela
+          equipe de desenvolvimento, sem plugins de terceiros que costumam causar lentidão e
+          brechas de segurança. A auditoria de segurança das dependências acusa
+          <strong>0 vulnerabilidades</strong>.
+        </div>
+
+        <div class="nota">
+          <strong>Manutenção sem mexer em código.</strong> Telefone, endereço, Instagram e
+          prazos de atendimento ficam em um único arquivo de configuração; todos os textos do
+          site, em outro. Atualizar um dado é editar um arquivo — não caçar o texto espalhado
+          pelas páginas.
+        </div>
+      </div>
+
+      <footer class="rodape"><span>Página 2</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 3. FUNCIONALIDADES -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Funcionalidades</div>
+        <h2 class="titulo">Estrutura do site, página a página</h2>
+
+        <h3>Início <span class="rota">( / )</span></h3>
+        <ul class="itens">
+          <li>
+            Seção de destaque com o posicionamento da empresa e dois atalhos: conversa direta no
+            WhatsApp (com a mensagem já escrita) e a página de soluções
+          </li>
+          <li>
+            Sinais de credibilidade acima da dobra: <strong>atuando desde 2004</strong>,
+            sociedade anônima e primeiro retorno em até 24 horas úteis
+          </li>
+          <li>Faixa com os quatro diferenciais: atendimento, análise, relacionamento e sigilo</li>
+          <li>
+            <strong>Carrossel de parceiros em movimento contínuo</strong>, com os logotipos
+            clicáveis levando ao site de cada parceiro, e botão para pausar a animação
+          </li>
+          <li>
+            Bloco “Critério antes de capital”, com o comparativo entre operar com e sem análise
+          </li>
+          <li>Lista das quatro frentes de atuação, cada uma levando à página de soluções</li>
+          <li>“Quando faz sentido procurar a Real Private”, com as situações mais comuns</li>
+          <li>“O que sustenta cada operação”: transparência, responsabilidade, critério e sigilo</li>
+          <li>Perguntas frequentes em formato sanfona (clique para expandir)</li>
+          <li>Chamada final para contato, endereço da sede e Instagram</li>
+        </ul>
+
+        <h3>Quem somos <span class="rota">( /quem-somos )</span></h3>
+        <ul class="itens">
+          <li>Texto institucional sobre a trajetória e a forma de atuação da empresa</li>
+          <li>Propósito, visão e missão, conforme o direcionamento estratégico</li>
+          <li>Posicionamento em quatro pilares: relacionamento, agilidade, personalização e credibilidade</li>
+          <li>
+            Os seis valores da empresa: confiança, agilidade responsável, atendimento
+            personalizado, relacionamento de longo prazo, ética e discrição, e flexibilidade com
+            critério
+          </li>
+        </ul>
+
+        <h3>O que fazemos <span class="rota">( /o-que-fazemos )</span></h3>
+        <ul class="itens">
+          <li>
+            As quatro frentes detalhadas — gestão de capital, antecipação de recebíveis, apoio ao
+            fluxo financeiro e relação com empresas —, cada uma com endereço próprio para ser
+            enviada por link
+          </li>
+          <li>Governança de atendimento: as cinco etapas da operação, do primeiro contato ao pós</li>
+          <li>
+            Cartão com os prazos de referência: primeiro retorno e triagem em até 24 horas úteis,
+            validação documental em até 48
+          </li>
+          <li>Princípios que sustentam cada operação</li>
+        </ul>
+      </div>
+
+      <footer class="rodape"><span>Página 3</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 4. FUNCIONALIDADES (cont.) -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Funcionalidades</div>
+        <h2 class="titulo">Estrutura do site, página a página</h2>
+
+        <h3>Para empresas <span class="rota">( /para-empresas )</span></h3>
+        <ul class="itens">
+          <li>Perfil das empresas atendidas, com os seis critérios de aderência</li>
+          <li>Situações comuns e segmentos com aderência (comércio, indústria, serviços, distribuição, construção, agronegócio, transportes e empresas familiares estruturadas)</li>
+          <li>
+            <strong>Checklist documental</strong> com os oito itens necessários para a análise
+            inicial — reduz idas e vindas antes da primeira conversa
+          </li>
+          <li>Como cada operação é conduzida</li>
+          <li>
+            Seção “Para parceiros”, sobre o modelo de indicação e os perfis que indicam empresas
+            (contadores, advogados, consultores, escritórios de assessoria)
+          </li>
+        </ul>
+
+        <h3>Contato <span class="rota">( /contato )</span></h3>
+        <ul class="itens">
+          <li>WhatsApp como canal principal, com a mensagem já preenchida</li>
+          <li>Telefone clicável, Instagram e endereço completo da sede</li>
+          <li>
+            <strong>Mapa do Google incorporado</strong>, com o marcador exato no endereço da
+            sede, e atalho “Traçar rota” que abre a navegação a partir da localização do visitante
+          </li>
+          <li>Aviso de que a conversa inicial e a análise de viabilidade são sem compromisso</li>
+        </ul>
+
+        <h3>Presentes em todas as páginas</h3>
+        <ul class="itens">
+          <li>Cabeçalho fixo com navegação, indicação da página atual e botão de WhatsApp</li>
+          <li>Menu adaptado para celular, que fecha com a tecla Esc e prende o foco do teclado</li>
+          <li>Botão flutuante de WhatsApp, sempre visível</li>
+          <li>Rodapé com navegação, contato e endereço</li>
+          <li>Página de erro 404 personalizada, com atalhos para as seções do site</li>
+          <li>Layout responsivo — adapta-se a celular, tablet e computador</li>
+        </ul>
+
+        <div class="nota">
+          <strong>Sobre o formulário de contato.</strong> A primeira versão do site trazia um
+          formulário na página de contato. A pedido da Real Private, ele foi removido e o espaço
+          passou a ser ocupado pelo mapa da sede. Com isso, o site deixou de coletar qualquer
+          dado de visitante — o contato acontece por WhatsApp e telefone.
+        </div>
+      </div>
+
+      <footer class="rodape"><span>Página 4</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 5. IDENTIDADE VISUAL -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Identidade visual</div>
+        <h2 class="titulo">Design e identidade visual</h2>
+
+        <p>
+          A paleta e a tipografia seguem fielmente o layout premium aprovado, garantindo
+          consistência visual em todo o site.
+        </p>
+
+        <div class="paleta">
+          <div class="cor">
+            <div class="amostra" style="background: #0b1f19"></div>
+            <div class="nome">Verde profundo</div>
+            <div class="hex">#0B1F19</div>
+          </div>
+          <div class="cor">
+            <div class="amostra" style="background: #102b22"></div>
+            <div class="nome">Verde institucional</div>
+            <div class="hex">#102B22</div>
+          </div>
+          <div class="cor">
+            <div class="amostra" style="background: #1b4535"></div>
+            <div class="nome">Verde médio</div>
+            <div class="hex">#1B4535</div>
+          </div>
+          <div class="cor">
+            <div class="amostra" style="background: #2f6a50"></div>
+            <div class="nome">Verde de destaque</div>
+            <div class="hex">#2F6A50</div>
+          </div>
+          <div class="cor">
+            <div class="amostra" style="background: #bad19a"></div>
+            <div class="nome">Verde-sálvia (acento)</div>
+            <div class="hex">#BAD19A</div>
+          </div>
+          <div class="cor">
+            <div class="amostra" style="background: #f7f6f2"></div>
+            <div class="nome">Areia (fundo)</div>
+            <div class="hex">#F7F6F2</div>
+          </div>
+        </div>
+
+        <h3>Tipografia</h3>
+        <p style="margin-top: 2mm">
+          <strong style="color: var(--ink-900)">Bodoni Moda</strong> (serifada) nos títulos —
+          transmite solidez e tradição, adequada ao setor financeiro.
+          <strong style="color: var(--ink-900)">Instrument Sans</strong> nos textos corridos —
+          alta legibilidade em telas. As duas são servidas pelo próprio site, o que elimina a
+          dependência do Google em tempo real e evita o deslocamento de layout durante o
+          carregamento.
+        </p>
+
+        <h3>Cores oficiais da marca</h3>
+        <p style="margin-top: 2mm">
+          As quatro cores do Guia de Uso da Logo — <strong style="color: var(--ink-900)">#026735,
+          #079A48, #52B848 e #92C83E</strong> — estão registradas no código como variáveis
+          próprias e ficam <strong style="color: var(--ink-900)">reservadas ao logotipo</strong>.
+          A paleta da interface é a interpretação institucional, mais sóbria, do layout aprovado:
+          isso preserva a marca sem deixar o site com aparência de material promocional.
+        </p>
+
+        <h3>Sobre as imagens</h3>
+        <p style="margin-top: 2mm">
+          A Real Private não forneceu fotografias para esta etapa. Nos espaços reservados a
+          imagem, o site exibe um painel de marca — o símbolo da empresa circundado por dois
+          anéis concêntricos, no mesmo sistema visual do layout. É uma solução deliberada: em vez
+          de um espaço vazio ou de uma foto de banco de imagens, o bloco pertence à identidade da
+          marca. Substituir por fotografia institucional, quando houver, é uma troca pontual.
+        </p>
+      </div>
+
+      <footer class="rodape"><span>Página 5</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 6. SEO -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Otimização para buscadores</div>
+        <h2 class="titulo">SEO técnico</h2>
+
+        <p>
+          O site foi configurado para ser encontrado com facilidade no Google e para gerar uma
+          prévia visual profissional quando o link é compartilhado em redes sociais e no
+          WhatsApp.
+        </p>
+
+        <ul class="itens">
+          <li>
+            Título e descrição únicos em cada uma das cinco páginas, escritos para os termos do
+            setor — securitizadora, antecipação de recebíveis, capital de giro, gestão de capital,
+            Presidente Prudente
+          </li>
+          <li>
+            Endereço canônico em todas as páginas, evitando que o Google trate versões diferentes
+            da mesma URL como conteúdo duplicado
+          </li>
+          <li>
+            Mapa do site (<code>sitemap.xml</code>) e <code>robots.txt</code> gerados
+            automaticamente a partir da mesma lista que alimenta o menu — nenhuma página entra na
+            navegação e fica de fora do mapa
+          </li>
+          <li>
+            <strong>Dados estruturados (Schema.org)</strong> informando ao Google que se trata de
+            uma instituição financeira, com endereço, telefone e coordenadas; um registro por
+            frente de atuação; as perguntas frequentes; e a trilha de navegação de cada página
+          </li>
+          <li>
+            Prévia de compartilhamento (Open Graph e Twitter Card) configurada em todas as
+            páginas, exibida ao enviar o link no WhatsApp, Instagram, Facebook e LinkedIn
+          </li>
+          <li>Ícone de aba do navegador (favicon) e ícone para tela inicial, com o símbolo da marca</li>
+          <li>
+            Estrutura de títulos organizada corretamente — exatamente um H1 por página, com a
+            hierarquia verificada
+          </li>
+          <li>Endereços em português e idioma declarado como <code>pt-BR</code></li>
+        </ul>
+
+        <div class="nota">
+          O carrossel de parceiros também colabora com o SEO: os links para os sites dos
+          parceiros são reais e rastreáveis, o que ajuda a posicionar a Real Private na
+          vizinhança certa do mercado financeiro.
+        </div>
+      </div>
+
+      <footer class="rodape"><span>Página 6</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 7. SEGURANÇA -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Proteção do site</div>
+        <h2 class="titulo">Segurança</h2>
+
+        <p>
+          Foram aplicadas as camadas de proteção recomendadas para sites institucionais do setor
+          financeiro, mesmo o site não coletando dados de visitantes.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Proteção</th>
+              <th>O que evita</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Política de Segurança de Conteúdo (CSP)</td>
+              <td>Bloqueia a execução de scripts maliciosos injetados por terceiros</td>
+            </tr>
+            <tr>
+              <td>HSTS (conexão segura obrigatória)</td>
+              <td>Impede o acesso ao site por conexão não criptografada (http em vez de https)</td>
+            </tr>
+            <tr>
+              <td>Proteção contra clickjacking</td>
+              <td>Impede que o site seja carregado escondido dentro de outro site para enganar visitantes</td>
+            </tr>
+            <tr>
+              <td>Restrição de permissões do navegador</td>
+              <td>Bloqueia acesso a câmera, microfone e localização, que o site nunca precisa usar</td>
+            </tr>
+            <tr>
+              <td>Política de referência</td>
+              <td>Evita vazar o endereço completo de navegação para sites externos</td>
+            </tr>
+            <tr>
+              <td>Isolamento entre origens</td>
+              <td>Impede que outros sites leiam recursos desta aplicação a partir de uma aba vizinha</td>
+            </tr>
+            <tr>
+              <td>Identificação do servidor ocultada</td>
+              <td>Não expõe a tecnologia e a versão em uso, informação útil a quem procura falhas conhecidas</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="destaque-escuro">
+          <strong>Superfície de ataque mínima.</strong> O site não tem formulários, não grava
+          cookies próprios, não usa armazenamento no navegador e não faz rastreamento. Não há
+          banco de dados nem área administrativa. O único conteúdo de terceiros embarcado é o
+          mapa da sede, explicitamente autorizado na política de segurança — todo o resto é
+          servido pelo próprio domínio.
+        </div>
+      </div>
+
+      <footer class="rodape"><span>Página 7</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 8. PERFORMANCE E ACESSIBILIDADE -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Velocidade e inclusão</div>
+        <h2 class="titulo">Performance e acessibilidade</h2>
+
+        <h3>Performance</h3>
+        <ul class="itens">
+          <li>
+            As 11 rotas do site (5 páginas mais os arquivos técnicos) são pré-geradas — o
+            servidor não processa nada a cada visita, apenas entrega a página pronta
+          </li>
+          <li>
+            Fontes servidas pelo próprio site, sem depender de servidores do Google em tempo real,
+            com as medidas reservadas na geração — o texto não “pula” durante o carregamento
+          </li>
+          <li>
+            <strong>Quantidade mínima de JavaScript:</strong> apenas três trechos do site o
+            utilizam — a indicação da página atual no menu, o menu de celular e a revelação suave
+            das seções ao rolar. Todo o conteúdo é montado no servidor
+          </li>
+          <li>
+            O carrossel de parceiros e as perguntas frequentes funcionam
+            <strong>sem nenhum JavaScript</strong>, inclusive o botão de pausar a animação
+          </li>
+          <li>
+            O mapa da página de contato só é carregado quando o visitante chega perto dele, o que
+            preserva a velocidade de abertura da página
+          </li>
+          <li>Imagens convertidas automaticamente para formatos modernos (AVIF e WebP), com cache de um ano</li>
+        </ul>
+
+        <h3>Acessibilidade</h3>
+        <ul class="itens">
+          <li>Link “Pular para o conteúdo” para quem navega pelo teclado</li>
+          <li>Indicador visual de foco em todos os links e botões, inclusive sobre fundos escuros</li>
+          <li>Menu com indicação da página atual também para leitores de tela, não apenas pela cor</li>
+          <li>
+            <strong>Contraste verificado par a par:</strong> todo texto do site atinge no mínimo
+            4,5:1, o exigido pelo nível AA das diretrizes internacionais
+          </li>
+          <li>Alvos de toque de 24px ou mais em toda a interface; botões principais com 48px</li>
+          <li>
+            Quem configura o sistema para reduzir animações não vê nenhum movimento — inclusive o
+            carrossel, que vira uma lista parada
+          </li>
+          <li>
+            O carrossel oferece três formas de pausar o movimento (botão, mouse e teclado),
+            atendendo ao critério que exige controle sobre conteúdo em movimento
+          </li>
+          <li>Estrutura semântica HTML5 e um único H1 por página</li>
+        </ul>
+      </div>
+
+      <footer class="rodape"><span>Página 8</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 9. TESTES -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Controle de qualidade</div>
+        <h2 class="titulo">Testes realizados</h2>
+
+        <p>Antes da entrega, o site passou pelas seguintes verificações técnicas e funcionais:</p>
+
+        <table class="compacta">
+          <thead>
+            <tr>
+              <th>Verificação</th>
+              <th>Detalhe</th>
+              <th style="width: 18%">Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Build de produção</td>
+              <td>Geração final do site: 0 erros, as 11 rotas geradas como conteúdo estático</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Verificação de código</td>
+              <td>Checagem automática de padrões e boas práticas (ESLint): 0 erros, 0 avisos</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Checagem de tipos</td>
+              <td>TypeScript em modo estrito: 0 erros de tipo em todo o projeto</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Instalação limpa</td>
+              <td>Projeto reinstalado do zero e reconstruído, como faz o servidor de publicação</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Navegação entre páginas</td>
+              <td>As 5 páginas percorridas no navegador, sem erros no console</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Contraste de cores</td>
+              <td>19 combinações de texto e fundo medidas; a menor ficou em 4,98:1 (mínimo exigido: 4,5:1)</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Alvos de toque</td>
+              <td>Todos os links e botões medidos em tela de celular: nenhum abaixo de 24px</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Carrossel de parceiros</td>
+              <td>Pausa e retomada testadas pelo botão, pelo mouse e pelo foco do teclado</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Mapa da sede</td>
+              <td>Marcador conferido no endereço correto, com carregamento adiado funcionando</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Cabeçalhos de segurança</td>
+              <td>Política de segurança e demais cabeçalhos inspecionados nas respostas do servidor, em modo de produção</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Mapa do site</td>
+              <td>Arquivo <code>sitemap.xml</code> conferido: as 5 páginas listadas corretamente</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Responsividade</td>
+              <td>Layout verificado em largura de celular (375px) e em tela de computador, sem rolagem horizontal</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+            <tr>
+              <td>Conferência de conteúdo</td>
+              <td>Telefone, endereço, Instagram e textos conferidos com o material original da empresa</td>
+              <td><span class="ok">✓ Aprovado</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="nota">
+          <strong>Observação.</strong> As verificações acima foram feitas de forma manual e
+          funcional durante o desenvolvimento. O projeto não inclui, neste momento, uma suíte de
+          testes automatizados — isso pode ser acrescentado como etapa futura, se desejado.
+        </div>
+      </div>
+
+      <footer class="rodape"><span>Página 9</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+
+    <!-- ================================================== 10. PENDÊNCIAS -->
+    <section class="pagina">
+      <header class="topo">
+        <span>Real Private Securitizadora S/A — Documentação do Projeto</span>
+        <span class="marca">Real Private</span>
+      </header>
+
+      <div class="conteudo">
+        <div class="eyebrow">Próximos passos</div>
+        <h2 class="titulo">Pendências e recomendações</h2>
+
+        <p>
+          Para o site ficar completo com o material definitivo da empresa, faltam apenas itens
+          que dependem do cliente:
+        </p>
+
+        <h3>Material da Real Private</h3>
+        <ul class="itens">
+          <li><strong>E-mail institucional</strong>, hoje ausente do site por não ter sido confirmado</li>
+          <li>
+            <strong>Horário de atendimento.</strong> Enquanto não for informado, o site
+            simplesmente não exibe o bloco — nada de espaço vazio ou informação provisória
+          </li>
+          <li>Fotografias institucionais, caso a empresa queira substituir os painéis de marca</li>
+        </ul>
+
+        <h3>Parceiros</h3>
+        <ul class="itens">
+          <li>
+            <strong>Lista de parceiros da Real Private.</strong> Os logotipos que aparecem hoje no
+            carrossel são apenas exemplos, usados para demonstrar o funcionamento da seção.
+            Aguardamos a Real Private informar quais parceiros devem constar no site, com os
+            respectivos logotipos e endereços — a substituição é direta e não exige nova
+            programação
+          </li>
+        </ul>
+
+        <h3>Publicação</h3>
+        <ul class="itens">
+          <li>
+            <strong>Domínio definitivo.</strong> Este documento cobre o desenvolvimento; apontar o
+            endereço final (ex.: realprivate.com.br) é uma etapa separada, e basta informar o
+            endereço em uma variável de configuração para os links canônicos e o mapa do site
+            passarem a usá-lo
+          </li>
+          <li>Revisão final de todos os textos pela equipe da Real Private antes da divulgação oficial</li>
+        </ul>
+
+        <h3>Contato</h3>
+        <p style="margin-top: 2mm">
+          Dúvidas sobre este documento ou sobre o site podem ser encaminhadas diretamente à
+          equipe responsável pelo desenvolvimento.
+        </p>
+      </div>
+
+      <footer class="rodape"><span>Página 10</span><span>Codivo Desenvolvimento Web</span></footer>
+    </section>
+  </body>
+</html>

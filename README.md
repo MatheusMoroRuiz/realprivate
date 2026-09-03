@@ -220,18 +220,18 @@ interface simplesmente omite o bloco correspondente — nada de placeholder vis�
 
 ### Logotipo
 
-`src/assets/logo-real-private.png` e `public/logo-real-private.png` precisam ser
-substituídos pelo arquivo original. O arquivo atual foi recuperado do projeto de
-design com a base inferior reconstruída (a API de leitura corta arquivos acima de
-256 KB), e é fiel mas não idêntico ao original.
+`src/assets/logo-real-private.png` e `public/logo-real-private.png` são o arquivo
+oficial fornecido pela empresa (720×720, símbolo em círculo com a assinatura
+"Real Private Securitizadora S/A · desde 2004" na base).
 
 Ao substituir, mantenha os dois caminhos e o formato quadrado com o símbolo
 centralizado — o componente `Logo` aplica o recorte circular. Depois, regenere os
-ícones:
+ícones derivados (`src/app/icon.png`, `src/app/apple-icon.png` e `docs/logo.png`),
+que saem do mesmo arquivo.
 
-```bash
-npx sharp-cli -i public/logo-real-private.png -o src/app/icon.png resize 512 512
-```
+Atenção ao cache: as imagens são servidas com `minimumCacheTTL` de um ano. Depois
+de trocar o arquivo, force atualização no navegador (Ctrl+Shift+R) — senão a
+versão antiga continua aparecendo.
 
 O Guia de Uso da Logo define as cores oficiais da marca, disponíveis como tokens
 `--color-marca-900/700/500/300` em `globals.css`. Elas são reservadas ao logotipo:
