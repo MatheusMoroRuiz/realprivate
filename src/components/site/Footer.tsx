@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { Logo } from '@/components/site/Logo';
 import { Container } from '@/components/ui/Container';
-import { enderecoLinhas, navegacao, siteConfig, whatsappUrl } from '@/lib/site-config';
+import { desenvolvedor, enderecoLinhas, navegacao, siteConfig, whatsappUrl } from '@/lib/site-config';
 
 const anoAtual = new Date().getFullYear();
 
@@ -80,13 +80,28 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className="relative mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-sage-500/20 py-8">
-        <p className="font-sans text-[12.5px] leading-relaxed text-sage-100/65">
-          © {anoAtual} {siteConfig.razaoSocial} · Todos os direitos reservados
-        </p>
-        <p className="font-sans text-[12.5px] leading-relaxed text-sage-100/60">
-          CEP {siteConfig.endereco.cepFormatado} · {siteConfig.endereco.cidade} /{' '}
-          {siteConfig.endereco.uf}
+      <Container className="relative mt-14 flex flex-col gap-5 border-t border-sage-500/20 py-8">
+        <div className="flex flex-wrap items-center justify-between gap-6">
+          <p className="font-sans text-[12.5px] leading-relaxed text-sage-100/65">
+            © {anoAtual} {siteConfig.razaoSocial} · Todos os direitos reservados
+          </p>
+          <p className="font-sans text-[12.5px] leading-relaxed text-sage-100/60">
+            CEP {siteConfig.endereco.cepFormatado} · {siteConfig.endereco.cidade} /{' '}
+            {siteConfig.endereco.uf}
+          </p>
+        </div>
+
+        {/* Crédito de desenvolvimento — discreto, abaixo dos dados institucionais. */}
+        <p className="text-center font-sans text-[12px] leading-relaxed text-sage-100/60">
+          Desenvolvido por{' '}
+          <a
+            href={desenvolvedor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sage-100/80 underline decoration-sage-500/40 underline-offset-2 transition-colors hover:text-sage-500"
+          >
+            {desenvolvedor.nome}
+          </a>
         </p>
       </Container>
     </footer>

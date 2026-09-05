@@ -173,3 +173,9 @@ export const enderecoLinhas = [
   `${siteConfig.endereco.logradouro} — ${siteConfig.endereco.bairro}`,
   `${siteConfig.endereco.cidade} / ${siteConfig.endereco.uf} · ${siteConfig.endereco.cepFormatado}`,
 ] as const;
+
+/** Crédito de desenvolvimento, exibido em letra miúda no rodapé. */
+export const desenvolvedor = {
+  nome: 'Codivo',
+  url: 'https://www.codivo.com.br/',
+} as const;

@@ -60,4 +60,13 @@ export const parceiros: readonly Parceiro[] = [
     largura: 168,
     altura: 37,
   },
+  {
+    // Desenvolvedora do site. Arquivo de marca oficial fornecido pela
+    // própria empresa (fundo em cartão branco removido por chroma key).
+    nome: 'Codivo',
+    url: 'https://www.codivo.com.br/',
+    logo: '/parceiros/codivo.png',
+    largura: 400,
+    altura: 132,
+  },
 ] as const;
