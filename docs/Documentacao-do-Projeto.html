@@ -5,7 +5,7 @@
     <title>Real Private Securitizadora S/A — Documentação do Projeto</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Instrument+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -27,8 +27,8 @@
         --canvas: #f7f6f2;
         --canvas-alt: #efeee7;
         --linha: rgb(11 31 25 / 0.12);
-        --display: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
-        --sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --display: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
       }
 
       @page {
@@ -124,6 +124,7 @@
 
       .capa-marca .nome {
         font-family: var(--display);
+        font-weight: 700;
         font-size: 24pt;
         line-height: 1;
         color: var(--sage-100);
@@ -159,15 +160,17 @@
       .capa h1 {
         margin: 6mm 0 0;
         font-family: var(--display);
-        font-weight: 400;
+        font-weight: 700;
         font-size: 40pt;
         line-height: 1.06;
         letter-spacing: -0.015em;
         max-width: 15em;
       }
 
+      /* Sem itálico: Manrope não tem, e o oblíquo sintético deforma a fonte.
+         O destaque fica por conta da cor, como no site. */
       .capa h1 em {
-        font-style: italic;
+        font-style: normal;
         color: var(--sage-400);
       }
 
@@ -219,6 +222,7 @@
 
       .topo .marca {
         font-family: var(--display);
+        font-weight: 700;
         font-size: 11pt;
         color: var(--ink-900);
       }
@@ -235,7 +239,7 @@
       h2.titulo {
         margin: 4mm 0 0;
         font-family: var(--display);
-        font-weight: 400;
+        font-weight: 600;
         font-size: 26pt;
         line-height: 1.15;
         letter-spacing: -0.01em;
@@ -244,8 +248,8 @@
 
       h3 {
         margin: 6.5mm 0 2.5mm;
-        font-family: var(--display);
-        font-weight: 400;
+        font-family: var(--sans);
+        font-weight: 600;
         font-size: 14pt;
         line-height: 1.2;
         color: var(--ink-900);
@@ -599,7 +603,7 @@
             </tr>
             <tr>
               <td>Tipografia</td>
-              <td>Bodoni Moda + Instrument Sans</td>
+              <td>Manrope + Inter</td>
               <td>
                 Mesmas fontes do design aprovado, servidas pelo próprio site (mais rápido e sem
                 enviar dados dos visitantes ao Google)
@@ -804,12 +808,12 @@
 
         <h3>Tipografia</h3>
         <p style="margin-top: 2mm">
-          <strong style="color: var(--ink-900)">Bodoni Moda</strong> (serifada) nos títulos —
-          transmite solidez e tradição, adequada ao setor financeiro.
-          <strong style="color: var(--ink-900)">Instrument Sans</strong> nos textos corridos —
-          alta legibilidade em telas. As duas são servidas pelo próprio site, o que elimina a
-          dependência do Google em tempo real e evita o deslocamento de layout durante o
-          carregamento.
+          <strong style="color: var(--ink-900)">Manrope</strong> nos títulos principais (H1 e
+          H2) — geométrica, sólida e contemporânea, com boa presença nos pesos 600 e 700.
+          <strong style="color: var(--ink-900)">Inter</strong> em todo o resto — subtítulos,
+          texto corrido, botões e legendas —, desenhada especificamente para leitura em tela. As
+          duas são servidas pelo próprio site, o que elimina a dependência do Google em tempo
+          real e evita o deslocamento de layout durante o carregamento.
         </p>
 
         <h3>Cores oficiais da marca</h3>

@@ -13,7 +13,7 @@ export default function NaoEncontrada() {
   return (
     <Container className="flex flex-col items-start gap-6 py-28 lg:py-36">
       <Eyebrow>Erro 404</Eyebrow>
-      <h1 className="max-w-[14em] font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.1] font-normal text-ink-900">
+      <h1 className="max-w-[14em] font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.1] font-bold text-ink-900">
         Não encontramos esta página.
       </h1>
       <p className="max-w-[34em] font-sans text-[17px] leading-[1.7] text-ink-400">

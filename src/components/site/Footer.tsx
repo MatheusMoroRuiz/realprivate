@@ -98,7 +98,7 @@ export function Footer() {
             href={desenvolvedor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sage-100/80 underline decoration-sage-500/40 underline-offset-2 transition-colors hover:text-sage-500"
+            className="py-1 text-sage-100/80 underline decoration-sage-500/40 underline-offset-2 transition-colors hover:text-sage-500"
           >
             {desenvolvedor.nome}
           </a>

@@ -56,7 +56,7 @@ function ItemParceiro({
             className="h-10 w-[132px] object-contain opacity-60 grayscale transition duration-300 group-hover/item:opacity-100 group-hover/item:grayscale-0 group-focus-within/item:opacity-100 group-focus-within/item:grayscale-0 sm:w-[148px]"
           />
         ) : (
-          <span className="flex h-10 w-[132px] items-center justify-center font-display text-[clamp(1.125rem,1.8vw,1.375rem)] leading-none whitespace-nowrap text-ink-400/70 transition-colors duration-300 group-hover/item:text-ink-900 group-focus-within/item:text-ink-900 sm:w-[148px]">
+          <span className="flex h-10 w-[132px] items-center justify-center font-sans text-[clamp(1.125rem,1.8vw,1.375rem)] leading-none font-semibold whitespace-nowrap text-ink-400/70 transition-colors duration-300 group-hover/item:text-ink-900 group-focus-within/item:text-ink-900 sm:w-[148px]">
             {parceiro.nome}
           </span>
         )}
@@ -92,7 +92,7 @@ export function CarrosselParceiros() {
             <Eyebrow>Parceiros</Eyebrow>
             <h2
               id="parceiros"
-              className="mt-5 font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-normal text-ink-900"
+              className="mt-5 font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
             >
               Quem caminha com a Real Private
             </h2>

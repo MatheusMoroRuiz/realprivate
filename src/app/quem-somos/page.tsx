@@ -55,7 +55,7 @@ export default function PaginaQuemSomos() {
             <h2 id="apresentacao" className="sr-only">
               Apresentação institucional
             </h2>
-            <p className="font-display text-[clamp(1.5rem,2.2vw,1.875rem)] leading-[1.42] font-normal text-ink-900">
+            <p className="font-sans text-[clamp(1.5rem,2.2vw,1.875rem)] leading-[1.42] font-medium text-ink-900">
               A Real Private atua no mercado financeiro oferecendo soluções personalizadas para
               empresas que buscam agilidade, confiança e atendimento próximo.
             </p>
@@ -87,7 +87,7 @@ export default function PaginaQuemSomos() {
           <h2
             id="identidade"
             data-revelar
-            className="mb-12 max-w-[16em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-normal text-ink-900"
+            className="mb-12 max-w-[16em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
           >
             O que orienta cada decisão
           </h2>
@@ -115,7 +115,7 @@ export default function PaginaQuemSomos() {
             </Eyebrow>
             <h2
               id="posicionamento"
-              className="mt-5 font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-normal text-sage-100"
+              className="mt-5 font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-sage-100"
             >
               Quatro pilares sustentam a nossa forma de trabalhar
             </h2>
@@ -136,7 +136,7 @@ export default function PaginaQuemSomos() {
             <Eyebrow>Valores</Eyebrow>
             <h2
               id="valores"
-              className="mt-5 max-w-[18em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-normal text-ink-900"
+              className="mt-5 max-w-[18em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
             >
               Princípios que não mudam conforme a operação
             </h2>

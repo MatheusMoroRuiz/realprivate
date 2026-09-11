@@ -57,9 +57,9 @@ export default function PaginaInicial() {
               Securitizadora · Presidente Prudente / SP
             </Eyebrow>
 
-            <h1 className="max-w-[12em] font-display text-[clamp(2.75rem,6vw,5.375rem)] leading-[1.02] font-normal tracking-[-0.015em] text-sage-100 motion-safe:animate-subir motion-safe:[animation-delay:0.14s]">
+            <h1 className="max-w-[12em] font-display text-[clamp(2.75rem,6vw,5.375rem)] leading-[1.02] font-bold tracking-[-0.015em] text-sage-100 motion-safe:animate-subir motion-safe:[animation-delay:0.14s]">
               Gestão estratégica de{" "}
-              <em className="text-sage-400 not-italic italic">capital</em> para
+              <em className="text-sage-400 not-italic">capital</em> para
               empresas.
             </h1>
 
@@ -79,10 +79,7 @@ export default function PaginaInicial() {
                 variante="acento"
               >
                 <IconeWhatsApp />
-                Falar no WhatsApp{" "}
-                <span className="tabular font-normal opacity-70">
-                  {siteConfig.contato.whatsappDisplay}
-                </span>
+                Falar no WhatsApp
               </BotaoLink>
               <BotaoLink href="/o-que-fazemos" variante="contornoClaro">
                 O que fazemos
@@ -111,7 +108,7 @@ export default function PaginaInicial() {
                     {item.rotulo}
                   </dt>
                   <dd
-                    className={`order-1 m-0 font-display text-[34px] leading-none font-normal text-sage-400 ${item.tabular ? "tabular" : ""}`}
+                    className={`order-1 m-0 font-display text-[34px] leading-none font-bold text-sage-400 ${item.tabular ? "tabular" : ""}`}
                   >
                     {item.valor}
                   </dd>
@@ -148,7 +145,7 @@ export default function PaginaInicial() {
                 <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.24em] text-ink-500 uppercase">
                   {pilar.rotulo}
                 </span>
-                <h3 className="font-display text-[23px] leading-[1.22] font-normal text-ink-900">
+                <h3 className="font-sans text-[23px] leading-[1.22] font-semibold text-ink-900">
                   {pilar.titulo}
                 </h3>
                 <p className="font-sans text-[14.5px] leading-[1.62] text-ink-400">
@@ -178,7 +175,7 @@ export default function PaginaInicial() {
               <Eyebrow>O nosso ponto de partida</Eyebrow>
               <h2
                 id="ponto-de-partida"
-                className="mt-5 font-display text-[clamp(2.125rem,3.4vw,3.125rem)] leading-[1.1] font-normal tracking-[-0.01em] text-ink-900"
+                className="mt-5 font-display text-[clamp(2.125rem,3.4vw,3.125rem)] leading-[1.1] font-semibold tracking-[-0.01em] text-ink-900"
               >
                 Critério antes de capital.
               </h2>
@@ -200,7 +197,7 @@ export default function PaginaInicial() {
               <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.26em] text-sage-400/75 uppercase">
                 Sem critério e análise
               </span>
-              <p className="font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.16] font-normal text-sage-100 italic">
+              <p className="font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.16] font-semibold text-sage-100">
                 capital gera risco
               </p>
             </div>
@@ -208,7 +205,7 @@ export default function PaginaInicial() {
               <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.26em] text-ink-950/65 uppercase">
                 Com critério e análise
               </span>
-              <p className="font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.16] font-normal text-ink-950 italic">
+              <p className="font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.16] font-semibold text-ink-950">
                 capital gera crescimento
               </p>
             </div>
@@ -238,7 +235,7 @@ export default function PaginaInicial() {
               <Eyebrow>O que fazemos</Eyebrow>
               <h2
                 id="o-que-fazemos"
-                className="mt-5 font-display text-[clamp(2.125rem,3.4vw,3.125rem)] leading-[1.1] font-normal tracking-[-0.01em] text-ink-900"
+                className="mt-5 font-display text-[clamp(2.125rem,3.4vw,3.125rem)] leading-[1.1] font-semibold tracking-[-0.01em] text-ink-900"
               >
                 Quatro frentes, uma leitura financeira.
               </h2>
@@ -262,7 +259,7 @@ export default function PaginaInicial() {
                     <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.24em] text-ink-500 uppercase">
                       {solucao.rotulo}
                     </span>
-                    <span className="font-display text-[30px] leading-[1.16] font-normal text-ink-900">
+                    <span className="font-sans text-[30px] leading-[1.16] font-semibold text-ink-900">
                       {solucao.titulo}
                     </span>
                   </span>
@@ -285,7 +282,7 @@ export default function PaginaInicial() {
             <Eyebrow>Para empresas</Eyebrow>
             <h2
               id="para-empresas"
-              className="max-w-[17em] font-display text-[clamp(1.875rem,3vw,2.625rem)] leading-[1.14] font-normal text-ink-900"
+              className="max-w-[17em] font-display text-[clamp(1.875rem,3vw,2.625rem)] leading-[1.14] font-semibold text-ink-900"
             >
               Quando faz sentido procurar a Real Private
             </h2>
@@ -341,7 +338,7 @@ export default function PaginaInicial() {
           <h2
             id="seguranca"
             data-revelar
-            className="mb-14 max-w-[20em] font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.14] font-normal text-sage-100"
+            className="mb-14 max-w-[20em] font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.14] font-semibold text-sage-100"
           >
             O que sustenta cada operação
           </h2>
@@ -361,7 +358,7 @@ export default function PaginaInicial() {
             <Eyebrow>Dúvidas frequentes</Eyebrow>
             <h2
               id="perguntas-frequentes"
-              className="mt-5 max-w-[14em] font-display text-[clamp(1.875rem,3vw,2.625rem)] leading-[1.14] font-normal text-ink-900"
+              className="mt-5 max-w-[14em] font-display text-[clamp(1.875rem,3vw,2.625rem)] leading-[1.14] font-semibold text-ink-900"
             >
               O que as empresas costumam perguntar
             </h2>
@@ -374,7 +371,7 @@ export default function PaginaInicial() {
                 name="faq"
                 className="group border-t border-ink-950/16 last:border-b"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 font-display text-[21px] leading-[1.3] font-normal text-ink-900 marker:content-none">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 font-sans text-[21px] leading-[1.3] font-semibold text-ink-900 marker:content-none">
                   {item.pergunta}
                   <span
                     aria-hidden="true"

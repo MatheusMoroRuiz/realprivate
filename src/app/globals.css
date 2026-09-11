@@ -9,8 +9,11 @@
  * contextos de marca — nunca substituem a paleta de interface.
  * ------------------------------------------------------------------------- */
 @theme {
-  --font-display: var(--fonte-display), 'Bodoni Moda', 'Times New Roman', Georgia, serif;
-  --font-sans: var(--fonte-sans), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Manrope só nos H1/H2; todo o resto é Inter. O fallback dos dois precisa
+     ser sans-serif: com o stack serifado antigo, uma falha no carregamento
+     derrubava os títulos em Times New Roman. */
+  --font-display: var(--fonte-display), 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: var(--fonte-sans), 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* Verdes profundos — texto, superfícies escuras */
   --color-ink-950: #0b1f19;

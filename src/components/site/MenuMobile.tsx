@@ -109,7 +109,7 @@ export function MenuMobile() {
                 key={item.href}
                 href={item.href}
                 onNavegar={() => setAberto(false)}
-                className="border-b border-ink-950/10 !py-5 font-display !text-2xl !font-normal"
+                className="border-b border-ink-950/10 !py-5 !text-2xl !font-semibold"
               >
                 {item.rotulo}
               </NavLink>

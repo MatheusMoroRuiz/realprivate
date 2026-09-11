@@ -43,7 +43,7 @@ export function Logo({ tamanho = 54, tom = 'escuro', prioridade = false, classNa
       />
       <span className="flex flex-col gap-[5px]">
         <span
-          className={`font-display text-[22px] leading-none font-medium tracking-[0.01em] ${corNome}`}
+          className={`font-display text-[22px] leading-none font-bold tracking-[-0.01em] ${corNome}`}
         >
           {siteConfig.nome}
         </span>

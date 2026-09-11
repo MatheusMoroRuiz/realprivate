@@ -44,7 +44,7 @@ export default function PaginaParaEmpresas() {
             <Eyebrow>Perfil de empresas atendidas</Eyebrow>
             <h2
               id="perfil"
-              className="max-w-[18em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-normal text-ink-900"
+              className="max-w-[18em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
             >
               Organização, responsabilidade e visão de longo prazo
             </h2>
@@ -110,7 +110,7 @@ export default function PaginaParaEmpresas() {
             <Eyebrow>Análise inicial</Eyebrow>
             <h2
               id="checklist"
-              className="mt-5 max-w-[14em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-normal text-ink-900"
+              className="mt-5 max-w-[14em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
             >
               O que precisamos para analisar
             </h2>
@@ -153,7 +153,7 @@ export default function PaginaParaEmpresas() {
           <h2
             id="conducao"
             data-revelar
-            className="mb-13 max-w-[16em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-normal text-ink-900"
+            className="mb-13 max-w-[16em] font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
           >
             Como conduzimos cada operação
           </h2>
@@ -174,7 +174,7 @@ export default function PaginaParaEmpresas() {
             </Eyebrow>
             <h2
               id="parceiros-titulo"
-              className="mt-5 max-w-[15em] font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-normal text-sage-100"
+              className="mt-5 max-w-[15em] font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-sage-100"
             >
               Indicação é o nosso principal ativo comercial
             </h2>

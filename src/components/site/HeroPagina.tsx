@@ -26,7 +26,7 @@ export function HeroPagina({ eyebrow, titulo, descricao }: HeroPaginaProps) {
         <Eyebrow tom="claro" className="motion-safe:animate-subir">
           {eyebrow}
         </Eyebrow>
-        <h1 className="mt-5 max-w-[19em] font-display text-[clamp(2.25rem,4.6vw,4.125rem)] leading-[1.06] font-normal tracking-[-0.015em] text-sage-100 motion-safe:animate-subir motion-safe:[animation-delay:0.12s]">
+        <h1 className="mt-5 max-w-[19em] font-display text-[clamp(2.25rem,4.6vw,4.125rem)] leading-[1.06] font-bold tracking-[-0.015em] text-sage-100 motion-safe:animate-subir motion-safe:[animation-delay:0.12s]">
           {titulo}
         </h1>
         {descricao ? (
@@ -39,7 +39,12 @@ export function HeroPagina({ eyebrow, titulo, descricao }: HeroPaginaProps) {
   );
 }
 
-/** Destaque em itálico usado dentro dos títulos. */
+/**
+ * Destaque dentro dos títulos.
+ *
+ * A diferenciação é por cor, não por itálico: Manrope não tem itálico real,
+ * e o oblíquo sintetizado pelo navegador deforma a geometria da fonte.
+ */
 export function Destaque({ children }: { readonly children: ReactNode }) {
-  return <em className="text-sage-400 not-italic italic">{children}</em>;
+  return <em className="text-sage-400 not-italic">{children}</em>;
 }

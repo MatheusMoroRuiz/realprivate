@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Bodoni_Moda, Instrument_Sans } from 'next/font/google';
+import { Inter, Manrope } from 'next/font/google';
 import type { ReactNode } from 'react';
 
 import '@/app/globals.css';
@@ -19,16 +19,18 @@ import { organizacaoJsonLd, websiteJsonLd } from '@/lib/structured-data';
  * crítico e nenhum dado do visitante enviado a terceiros) e reserva as
  * métricas da fonte no build, o que zera o deslocamento de layout (CLS).
  */
-const fonteDisplay = Bodoni_Moda({
+const fonteDisplay = Manrope({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  style: ['normal', 'italic'],
+  // Só H1 (700) e H2 (600) usam a fonte de display — não carregamos pesos
+  // que ninguém aplica. Manrope não tem itálico: nada no site depende disso.
+  weight: ['600', '700'],
   display: 'swap',
   variable: '--fonte-display',
 });
 
-const fonteSans = Instrument_Sans({
+const fonteSans = Inter({
   subsets: ['latin'],
+  // 400 texto corrido · 500 subtítulos e menu · 600 H3 e botões.
   weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--fonte-sans',

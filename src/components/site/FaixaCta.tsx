@@ -1,7 +1,7 @@
 import { BotaoLink } from '@/components/ui/Botao';
 import { Container } from '@/components/ui/Container';
 import { IconeWhatsApp } from '@/components/ui/IconeWhatsApp';
-import { siteConfig, whatsappUrl } from '@/lib/site-config';
+import { whatsappUrl } from '@/lib/site-config';
 
 type AcaoSecundaria = {
   readonly href: string;
@@ -41,7 +41,7 @@ export function FaixaCta({
     <section className={acento ? 'bg-sage-500' : 'border-t border-ink-950/8 bg-canvas-alt'}>
       <Container className="flex flex-col items-start gap-8 py-18 lg:flex-row lg:items-center lg:justify-between lg:gap-15 lg:py-22">
         <div className="flex flex-col gap-4">
-          <h2 className="max-w-[18em] font-display text-[clamp(1.75rem,3.2vw,2.75rem)] leading-[1.12] font-normal text-ink-950">
+          <h2 className="max-w-[18em] font-display text-[clamp(1.75rem,3.2vw,2.75rem)] leading-[1.12] font-semibold text-ink-950">
             {titulo}
           </h2>
           {descricao ? (
@@ -54,10 +54,7 @@ export function FaixaCta({
         <div className="flex shrink-0 flex-wrap gap-4">
           <BotaoLink href={whatsappUrl(mensagemWhatsApp)} externo variante="escuro">
             <IconeWhatsApp />
-            Falar no WhatsApp{' '}
-            <span className="tabular font-normal opacity-75">
-              {siteConfig.contato.whatsappDisplay}
-            </span>
+            Falar no WhatsApp
           </BotaoLink>
           <BotaoLink
             href={secundaria.href}

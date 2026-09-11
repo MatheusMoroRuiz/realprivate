@@ -58,7 +58,7 @@ export default function PaginaContato() {
             <div className="flex flex-col gap-4">
               <h2
                 id="canais"
-                className="font-display text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.2] font-normal text-ink-900"
+                className="font-display text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.2] font-semibold text-ink-900"
               >
                 Converse direto com a Real Private
               </h2>
@@ -77,17 +77,14 @@ export default function PaginaContato() {
               className="self-start"
             >
               <IconeWhatsApp />
-              Falar no WhatsApp{' '}
-              <span className="tabular font-normal opacity-75">
-                {siteConfig.contato.whatsappDisplay}
-              </span>
+              Falar no WhatsApp
             </BotaoLink>
 
             <div className="flex flex-col gap-7">
               <Canal rotulo="Telefone">
                 <a
                   href={siteConfig.contato.telefoneHref}
-                  className="tabular self-start font-display text-[clamp(1.5rem,3vw,2.125rem)] leading-tight text-ink-900 transition-colors hover:text-ink-700"
+                  className="tabular self-start font-display text-[clamp(1.5rem,3vw,2.125rem)] leading-tight font-bold text-ink-900 transition-colors hover:text-ink-700"
                 >
                   {siteConfig.contato.whatsappDisplay}
                 </a>

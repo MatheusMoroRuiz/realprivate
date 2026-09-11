@@ -66,7 +66,7 @@ export default function PaginaOQueFazemos() {
             >
               <div className="flex flex-col gap-3">
                 <Eyebrow>{solucao.rotulo}</Eyebrow>
-                <h3 className="font-display text-[clamp(1.75rem,2.6vw,2.25rem)] leading-[1.16] font-normal text-ink-900">
+                <h3 className="font-sans text-[clamp(1.75rem,2.6vw,2.25rem)] leading-[1.16] font-semibold text-ink-900">
                   {solucao.titulo}
                 </h3>
               </div>
@@ -88,7 +88,7 @@ export default function PaginaOQueFazemos() {
             <Eyebrow>Governança de atendimento</Eyebrow>
             <h2
               id="como-conduzimos"
-              className="mt-5 font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-normal text-ink-900"
+              className="mt-5 font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
             >
               Como conduzimos cada operação
             </h2>
@@ -109,7 +109,7 @@ export default function PaginaOQueFazemos() {
                 <span className="tabular font-sans text-[10.5px] leading-none font-medium tracking-[0.24em] text-ink-500 uppercase">
                   Etapa {etapa.numero}
                 </span>
-                <h3 className="font-display text-[23px] leading-[1.24] font-normal text-ink-900">
+                <h3 className="font-sans text-[23px] leading-[1.24] font-semibold text-ink-900">
                   {etapa.titulo}
                 </h3>
                 <p className="font-sans text-[14.5px] leading-[1.62] text-ink-400">
@@ -126,7 +126,7 @@ export default function PaginaOQueFazemos() {
               <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.24em] text-ink-500 uppercase">
                 Nosso compromisso
               </span>
-              <h3 className="font-display text-[23px] leading-[1.24] font-normal text-ink-900">
+              <h3 className="font-sans text-[23px] leading-[1.24] font-semibold text-ink-900">
                 Prazos de referência
               </h3>
               <dl className="flex flex-col gap-2 font-sans text-[14px] leading-[1.6] text-ink-400">
@@ -166,7 +166,7 @@ export default function PaginaOQueFazemos() {
             </Eyebrow>
             <h2
               id="principios"
-              className="mt-5 font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-normal text-sage-100"
+              className="mt-5 font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-sage-100"
             >
               O que sustenta cada operação
             </h2>
