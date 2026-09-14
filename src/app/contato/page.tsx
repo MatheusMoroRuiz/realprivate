@@ -62,7 +62,7 @@ export default function PaginaContato() {
               >
                 Converse direto com a Real Private
               </h2>
-              <p className="max-w-[32em] font-sans text-[16.5px] leading-[1.7] text-ink-400">
+              <p className="max-w-[32em] font-sans text-[16.5px] leading-[1.7] text-ink-700">
                 O caminho mais rápido é o WhatsApp: você fala com uma pessoa, conta o momento da
                 empresa e recebe uma leitura inicial sem compromisso.
               </p>
@@ -84,7 +84,7 @@ export default function PaginaContato() {
               <Canal rotulo="Telefone">
                 <a
                   href={siteConfig.contato.telefoneHref}
-                  className="tabular self-start font-display text-[clamp(1.5rem,3vw,2.125rem)] leading-tight font-bold text-ink-900 transition-colors hover:text-ink-700"
+                  className="tabular self-start font-display text-[clamp(1.5rem,3vw,2.125rem)] leading-tight font-bold text-ink-900 transition-colors hover:text-ink-500"
                 >
                   {siteConfig.contato.whatsappDisplay}
                 </a>
@@ -97,7 +97,7 @@ export default function PaginaContato() {
                 <Canal rotulo="E-mail">
                   <a
                     href={`mailto:${siteConfig.contato.email}`}
-                    className="self-start border-b border-ink-700/30 pt-1.5 pb-1.5 font-sans text-[17px] leading-[1.5] text-ink-700 transition-colors hover:border-ink-700"
+                    className="self-start border-b border-ink-500/30 pt-1.5 pb-1.5 font-sans text-[17px] leading-[1.5] text-ink-500 transition-colors hover:border-ink-500"
                   >
                     {siteConfig.contato.email}
                   </a>
@@ -109,7 +109,7 @@ export default function PaginaContato() {
                   href={siteConfig.contato.instagram.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="self-start border-b border-ink-700/30 pt-1.5 pb-1.5 font-sans text-[17px] leading-[1.5] text-ink-700 transition-colors hover:border-ink-700"
+                  className="self-start border-b border-ink-500/30 pt-1.5 pb-1.5 font-sans text-[17px] leading-[1.5] text-ink-500 transition-colors hover:border-ink-500"
                 >
                   {siteConfig.contato.instagram.handle}
                 </a>
@@ -151,7 +151,7 @@ export default function PaginaContato() {
                 href={mapaRotaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 shrink-0 border-b border-ink-700/30 pt-1.5 pb-1.5 font-sans text-sm leading-none font-medium text-ink-700 transition-colors hover:border-ink-700"
+                className="mt-1 shrink-0 border-b border-ink-500/30 pt-1.5 pb-1.5 font-sans text-sm leading-none font-medium text-ink-500 transition-colors hover:border-ink-500"
               >
                 Traçar rota
               </a>

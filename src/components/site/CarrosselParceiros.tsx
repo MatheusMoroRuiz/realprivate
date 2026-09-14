@@ -56,7 +56,7 @@ function ItemParceiro({
             className="h-10 w-[132px] object-contain opacity-60 grayscale transition duration-300 group-hover/item:opacity-100 group-hover/item:grayscale-0 group-focus-within/item:opacity-100 group-focus-within/item:grayscale-0 sm:w-[148px]"
           />
         ) : (
-          <span className="flex h-10 w-[132px] items-center justify-center font-sans text-[clamp(1.125rem,1.8vw,1.375rem)] leading-none font-semibold whitespace-nowrap text-ink-400/70 transition-colors duration-300 group-hover/item:text-ink-900 group-focus-within/item:text-ink-900 sm:w-[148px]">
+          <span className="flex h-10 w-[132px] items-center justify-center font-sans text-[clamp(1.125rem,1.8vw,1.375rem)] leading-none font-semibold whitespace-nowrap text-ink-700/70 transition-colors duration-300 group-hover/item:text-ink-900 group-focus-within/item:text-ink-900 sm:w-[148px]">
             {parceiro.nome}
           </span>
         )}
@@ -96,7 +96,7 @@ export function CarrosselParceiros() {
             >
               Quem caminha com a Real Private
             </h2>
-            <p className="mt-4 font-sans text-[16.5px] leading-[1.72] text-ink-400">
+            <p className="mt-4 font-sans text-[16.5px] leading-[1.72] text-ink-700">
               Nossa forma de trabalhar se apoia em uma rede de instituições e parceiros de mercado
               construída ao longo de mais de duas décadas.
             </p>
@@ -109,7 +109,7 @@ export function CarrosselParceiros() {
           <input type="checkbox" id="pausar-parceiros" className="sr-only" />
           <label
             htmlFor="pausar-parceiros"
-            className="inline-flex min-h-11 cursor-pointer items-center gap-2.5 rounded-[2px] border border-ink-950/20 px-4 py-2.5 font-sans text-[13px] leading-none font-medium text-ink-400 transition-colors select-none hover:border-ink-950/40 hover:text-ink-900 motion-reduce:hidden"
+            className="inline-flex min-h-11 cursor-pointer items-center gap-2.5 rounded-[2px] border border-ink-950/20 px-4 py-2.5 font-sans text-[13px] leading-none font-medium text-ink-700 transition-colors select-none hover:border-ink-950/40 hover:text-ink-900 motion-reduce:hidden"
           >
             <svg
               width="13"

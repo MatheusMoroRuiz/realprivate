@@ -65,8 +65,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f7f6f2' },
-    { media: '(prefers-color-scheme: dark)', color: '#0b1f19' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#052020' },
   ],
   colorScheme: 'light',
 };
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { readonly children: ReactNode 
         {/* Primeiro alvo do Tab: permite pular a navegação repetida. */}
         <a
           href="#conteudo"
-          className="sr-only rounded-[2px] bg-ink-900 px-5 py-3 font-sans text-sm font-semibold text-sage-200 focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-100"
+          className="sr-only rounded-[2px] bg-ink-900 px-5 py-3 font-sans text-sm font-semibold text-white focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-100"
         >
           Pular para o conteúdo
         </a>

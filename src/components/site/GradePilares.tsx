@@ -43,12 +43,12 @@ export function GradePilares({
             </span>
           ) : null}
           <h3
-            className={`font-sans text-[23px] leading-[1.24] font-semibold ${escuro ? 'text-sage-100' : 'text-ink-900'}`}
+            className={`font-sans text-[23px] leading-[1.24] font-semibold ${escuro ? 'text-white' : 'text-ink-900'}`}
           >
             {pilar.titulo}
           </h3>
           <p
-            className={`font-sans text-[14.5px] leading-[1.62] ${escuro ? 'text-sage-100/75' : 'text-ink-400'}`}
+            className={`font-sans text-[14.5px] leading-[1.62] ${escuro ? 'text-sage-100/75' : 'text-ink-700'}`}
           >
             {pilar.texto}
           </p>

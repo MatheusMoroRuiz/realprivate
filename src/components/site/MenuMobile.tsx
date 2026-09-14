@@ -121,7 +121,7 @@ export function MenuMobile() {
               href={whatsappUrl('Olá! Gostaria de falar com a Real Private.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-[2px] bg-sage-500 px-6 py-4 font-sans text-[15px] leading-none font-semibold text-ink-950 transition-colors hover:bg-sage-400"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-[2px] bg-ink-500 px-6 py-4 font-sans text-[15px] leading-none font-semibold text-white transition-colors hover:bg-ink-700"
             >
               <IconeWhatsApp />
               WhatsApp{' '}

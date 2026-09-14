@@ -58,7 +58,7 @@ export function FaixaCta({
           </BotaoLink>
           <BotaoLink
             href={secundaria.href}
-            variante="contorno"
+            variante={acento ? 'contornoEscuro' : 'contorno'}
             {...(secundaria.externo ? { externo: true } : {})}
           >
             {secundaria.rotulo}

@@ -59,14 +59,14 @@ export default function PaginaQuemSomos() {
               A Real Private atua no mercado financeiro oferecendo soluções personalizadas para
               empresas que buscam agilidade, confiança e atendimento próximo.
             </p>
-            <p className="font-sans text-[16.5px] leading-[1.72] text-ink-400">
+            <p className="font-sans text-[16.5px] leading-[1.72] text-ink-700">
               Ao longo de sua trajetória, construiu uma reputação baseada em credibilidade,
               relacionamento e responsabilidade na condução das operações. Diferente de modelos
               financeiros excessivamente padronizados, a Real Private valoriza a análise
               individualizada de cada cliente, compreendendo sua realidade, sua necessidade e seu
               perfil antes de conduzir qualquer operação.
             </p>
-            <p className="font-sans text-[16.5px] leading-[1.72] text-ink-400">
+            <p className="font-sans text-[16.5px] leading-[1.72] text-ink-700">
               Nossa atuação é sustentada por discrição, agilidade responsável, flexibilidade com
               critério e compromisso com relações de longo prazo. Mais do que oferecer soluções
               financeiras, buscamos construir parcerias sólidas com empresas que valorizam
@@ -97,7 +97,7 @@ export default function PaginaQuemSomos() {
                 <dt>
                   <Eyebrow>{item.rotulo}</Eyebrow>
                 </dt>
-                <dd className="m-0 font-sans text-[15.5px] leading-[1.7] text-ink-400">
+                <dd className="m-0 font-sans text-[15.5px] leading-[1.7] text-ink-700">
                   {item.texto}
                 </dd>
               </div>
@@ -115,7 +115,7 @@ export default function PaginaQuemSomos() {
             </Eyebrow>
             <h2
               id="posicionamento"
-              className="mt-5 font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-sage-100"
+              className="mt-5 font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-white"
             >
               Quatro pilares sustentam a nossa forma de trabalhar
             </h2>

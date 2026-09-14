@@ -70,7 +70,7 @@ export default function PaginaOQueFazemos() {
                   {solucao.titulo}
                 </h3>
               </div>
-              <p className="max-w-[36em] font-sans text-lg leading-[1.72] text-ink-400">
+              <p className="max-w-[36em] font-sans text-lg leading-[1.72] text-ink-700">
                 {solucao.detalhe}
               </p>
             </article>
@@ -92,7 +92,7 @@ export default function PaginaOQueFazemos() {
             >
               Como conduzimos cada operação
             </h2>
-            <p className="mt-5 font-sans text-[16.5px] leading-[1.72] text-ink-400">
+            <p className="mt-5 font-sans text-[16.5px] leading-[1.72] text-ink-700">
               Padronizar não significa engessar. As etapas existem para garantir
               qualidade, segurança e agilidade, a personalização continua na
               forma de analisar e conduzir cada caso.
@@ -112,7 +112,7 @@ export default function PaginaOQueFazemos() {
                 <h3 className="font-sans text-[23px] leading-[1.24] font-semibold text-ink-900">
                   {etapa.titulo}
                 </h3>
-                <p className="font-sans text-[14.5px] leading-[1.62] text-ink-400">
+                <p className="font-sans text-[14.5px] leading-[1.62] text-ink-700">
                   {etapa.texto}
                 </p>
               </li>
@@ -121,7 +121,7 @@ export default function PaginaOQueFazemos() {
             {/* Compromisso de prazo — §6.3 SLA interno. */}
             <li
               data-revelar
-              className="flex flex-col gap-3.5 border-t border-ink-500 bg-sage-300/50 p-6"
+              className="flex flex-col gap-3.5 border-t border-ink-500 bg-sage-500/12 p-6"
             >
               <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.24em] text-ink-500 uppercase">
                 Nosso compromisso
@@ -129,7 +129,7 @@ export default function PaginaOQueFazemos() {
               <h3 className="font-sans text-[23px] leading-[1.24] font-semibold text-ink-900">
                 Prazos de referência
               </h3>
-              <dl className="flex flex-col gap-2 font-sans text-[14px] leading-[1.6] text-ink-400">
+              <dl className="flex flex-col gap-2 font-sans text-[14px] leading-[1.6] text-ink-700">
                 <div className="flex flex-wrap gap-x-2">
                   <dt>Primeiro retorno:</dt>
                   <dd className="m-0 font-medium text-ink-900">
@@ -166,7 +166,7 @@ export default function PaginaOQueFazemos() {
             </Eyebrow>
             <h2
               id="principios"
-              className="mt-5 font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-sage-100"
+              className="mt-5 font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-white"
             >
               O que sustenta cada operação
             </h2>

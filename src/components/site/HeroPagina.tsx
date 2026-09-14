@@ -20,13 +20,13 @@ export function HeroPagina({ eyebrow, titulo, descricao }: HeroPaginaProps) {
     <section className="superficie-escura relative overflow-hidden bg-ink-900 text-sage-100">
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_88%_8%,rgb(47_106_80/0.5)_0%,rgb(16_43_34/0)_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_88%_8%,rgb(34_83_71/0.5)_0%,rgb(10_43_38/0)_60%)]"
       />
       <Container className="relative py-20 sm:py-24 lg:py-26">
         <Eyebrow tom="claro" className="motion-safe:animate-subir">
           {eyebrow}
         </Eyebrow>
-        <h1 className="mt-5 max-w-[19em] font-display text-[clamp(2.25rem,4.6vw,4.125rem)] leading-[1.06] font-bold tracking-[-0.015em] text-sage-100 motion-safe:animate-subir motion-safe:[animation-delay:0.12s]">
+        <h1 className="mt-5 max-w-[19em] font-display text-[clamp(2.25rem,4.6vw,4.125rem)] leading-[1.06] font-bold tracking-[-0.015em] text-white motion-safe:animate-subir motion-safe:[animation-delay:0.12s]">
           {titulo}
         </h1>
         {descricao ? (
@@ -46,5 +46,5 @@ export function HeroPagina({ eyebrow, titulo, descricao }: HeroPaginaProps) {
  * e o oblíquo sintetizado pelo navegador deforma a geometria da fonte.
  */
 export function Destaque({ children }: { readonly children: ReactNode }) {
-  return <em className="text-sage-400 not-italic">{children}</em>;
+  return <em className="text-sage-500 not-italic">{children}</em>;
 }

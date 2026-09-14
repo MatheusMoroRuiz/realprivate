@@ -16,7 +16,7 @@ export default function NaoEncontrada() {
       <h1 className="max-w-[14em] font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.1] font-bold text-ink-900">
         Não encontramos esta página.
       </h1>
-      <p className="max-w-[34em] font-sans text-[17px] leading-[1.7] text-ink-400">
+      <p className="max-w-[34em] font-sans text-[17px] leading-[1.7] text-ink-700">
         O endereço pode ter mudado ou o link pode estar incompleto. Você pode voltar ao início ou
         seguir por uma das seções abaixo.
       </p>
@@ -32,7 +32,7 @@ export default function NaoEncontrada() {
             <Link
               key={item.href}
               href={item.href}
-              className="border-b border-ink-700/30 pt-1.5 pb-1.5 font-sans text-sm font-medium text-ink-700 transition-colors hover:border-ink-700"
+              className="border-b border-ink-500/30 pt-1.5 pb-1.5 font-sans text-sm font-medium text-ink-500 transition-colors hover:border-ink-500"
             >
               {item.rotulo}
             </Link>

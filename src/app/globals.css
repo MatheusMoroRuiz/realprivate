@@ -3,10 +3,11 @@
 /* ------------------------------------------------------------------------- *
  * Design tokens — Real Private
  *
- * A paleta do site é a interpretação "premium" (dessaturada, institucional)
- * da marca. As cores oficiais do logotipo, definidas no Guia de Uso da Logo,
- * ficam em `--color-marca-*` e são reservadas ao próprio logotipo e a
- * contextos de marca — nunca substituem a paleta de interface.
+ * A interface inteira sai de um eixo cromático só: verde. Nada de uma segunda
+ * família de cor — o contraste vem da profundidade do tom, não da variedade.
+ * As cores oficiais do logotipo, definidas no Guia de Uso da Logo, ficam em
+ * `--color-marca-*` e são reservadas ao próprio logotipo — nunca substituem a
+ * paleta de interface.
  * ------------------------------------------------------------------------- */
 @theme {
   /* Manrope só nos H1/H2; todo o resto é Inter. O fallback dos dois precisa
@@ -15,31 +16,37 @@
   --font-display: var(--fonte-display), 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-sans: var(--fonte-sans), 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Verdes profundos — texto, superfícies escuras */
-  --color-ink-950: #0b1f19;
-  --color-ink-900: #102b22;
-  --color-ink-800: #123328;
-  --color-ink-700: #1b4535;
-  --color-ink-600: #255140;
-  --color-ink-500: #2f6a50;
-  --color-ink-400: #43544b;
-  /* #5f7268 do layout original ficava em 4.41:1 sobre --color-canvas-alt;
-     este tom mantém a leveza e sobe o contraste para 5.03:1 (WCAG AA). */
-  --color-ink-300: #57695f;
+  /* ----------------------------------------------------------------- *
+   * Paleta institucional — enxuta de propósito.
+   *
+   * Um único eixo cromático: verde. Os tons escuros (`ink`) carregam texto e
+   * superfícies; o verde claro (`sage`) é reservado a destaques e detalhes.
+   * Fora do logotipo, o site não usa nenhuma outra família de cor.
+   * ----------------------------------------------------------------- */
 
-  /* Verdes claros — acento, superfícies de destaque */
-  --color-sage-600: #a9c486;
-  --color-sage-500: #bad19a;
-  --color-sage-400: #cfe0b6;
-  --color-sage-300: #e7f0db;
-  --color-sage-200: #f1f5ec;
-  --color-sage-100: #f6f9f2;
+  /* Verdes profundos — texto e superfícies escuras */
+  --color-ink-950: #052020; /* H1 e fundo escuro mais profundo */
+  --color-ink-900: #0a2b26; /* H2/H3 e fundo escuro */
+  --color-ink-800: #10322c; /* degrau intermediário, só em gradientes */
+  --color-ink-700: #163932; /* corpo de texto e hover do botão primário */
+  --color-ink-600: #1c463c; /* degrau intermediário, só em gradientes */
+  --color-ink-500: #225347; /* destaque: botão primário, links, filetes */
+  --color-ink-300: #5d6f68; /* texto de apoio — 5.33:1 sobre o fundo branco */
 
-  /* Superfícies neutras */
-  --color-canvas: #f7f6f2;
-  --color-canvas-alt: #efeee7;
+  /* Verdes claros — destaques e detalhes sobre fundo escuro */
+  --color-sage-100: #bfd0c7; /* texto sobre fundo escuro */
+  --color-sage-300: #a9c6b4; /* degrau claro, só em gradientes */
+  --color-sage-400: #9cbfa9; /* hover do CTA sobre fundo escuro */
+  --color-sage-500: #8eb69a; /* detalhes e destaques */
+  --color-sage-600: #74a186; /* degrau profundo, só em gradientes */
 
-  /* Cores oficiais do logotipo — Guia de Uso da Logo */
+  /* Superfícies claras. `canvas-alt` é uma tinta de 10% do verde de detalhe
+     sobre o branco: separa as seções sem introduzir uma cor nova. */
+  --color-canvas: #ffffff;
+  --color-canvas-alt: #f4f8f5;
+
+  /* Cores oficiais do logotipo — Guia de Uso da Logo.
+     Reservadas ao próprio logotipo; não entram na interface. */
   --color-marca-900: #026735;
   --color-marca-700: #079a48;
   --color-marca-500: #52b848;
@@ -191,10 +198,10 @@
 
 @keyframes cabecalho-sombra {
   from {
-    box-shadow: 0 0 0 0 rgb(11 31 25 / 0);
+    box-shadow: 0 0 0 0 rgb(5 32 32 / 0);
   }
   to {
-    box-shadow: 0 10px 30px -22px rgb(11 31 25 / 0.5);
+    box-shadow: 0 10px 30px -22px rgb(5 32 32 / 0.5);
   }
 }
 

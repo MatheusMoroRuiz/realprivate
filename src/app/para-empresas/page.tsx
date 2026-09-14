@@ -48,7 +48,7 @@ export default function PaginaParaEmpresas() {
             >
               Organização, responsabilidade e visão de longo prazo
             </h2>
-            <p className="max-w-[30em] font-sans text-[16.5px] leading-[1.72] text-ink-400">
+            <p className="max-w-[30em] font-sans text-[16.5px] leading-[1.72] text-ink-700">
               Atendemos empresas de diferentes portes e segmentos. Mais importante do que o porte é
               a qualidade da operação, a clareza da demanda e a confiabilidade da empresa.
             </p>
@@ -90,7 +90,7 @@ export default function PaginaParaEmpresas() {
               {segmentos.map((segmento) => (
                 <li
                   key={segmento}
-                  className="rounded-[2px] border border-ink-950/15 bg-canvas-alt px-3.5 py-2 font-sans text-[13.5px] leading-none text-ink-400"
+                  className="rounded-[2px] border border-ink-950/15 bg-canvas-alt px-3.5 py-2 font-sans text-[13.5px] leading-none text-ink-700"
                 >
                   {segmento}
                 </li>
@@ -114,7 +114,7 @@ export default function PaginaParaEmpresas() {
             >
               O que precisamos para analisar
             </h2>
-            <p className="mt-5 max-w-[30em] font-sans text-[16.5px] leading-[1.72] text-ink-400">
+            <p className="mt-5 max-w-[30em] font-sans text-[16.5px] leading-[1.72] text-ink-700">
               Solicitamos apenas o necessário. A documentação é proporcional ao tipo, ao valor e à
               complexidade da operação — o objetivo é organizar a análise, não criar barreiras.
             </p>
@@ -174,7 +174,7 @@ export default function PaginaParaEmpresas() {
             </Eyebrow>
             <h2
               id="parceiros-titulo"
-              className="mt-5 max-w-[15em] font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-sage-100"
+              className="mt-5 max-w-[15em] font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.14] font-semibold text-white"
             >
               Indicação é o nosso principal ativo comercial
             </h2>

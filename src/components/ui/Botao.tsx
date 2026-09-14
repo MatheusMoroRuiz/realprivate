@@ -1,18 +1,22 @@
 import Link from 'next/link';
 import type { ComponentProps, ReactNode } from 'react';
 
-type Variante = 'acento' | 'escuro' | 'contorno' | 'contornoClaro';
+type Variante = 'acento' | 'escuro' | 'contorno' | 'contornoEscuro' | 'contornoClaro';
 
 const VARIANTES: Record<Variante, string> = {
-  /* CTA principal sobre fundo escuro */
+  /* Primário sobre fundo escuro: o verde de destaque, único acento claro da paleta */
   acento: 'bg-sage-500 text-ink-950 hover:bg-sage-400',
-  /* CTA principal sobre fundo claro */
-  escuro: 'bg-ink-900 text-sage-200 hover:bg-ink-700',
-  /* CTA secundário sobre fundo claro */
-  contorno: 'border border-ink-950/40 text-ink-950 hover:border-ink-950 hover:bg-white/40',
-  /* CTA secundário sobre fundo escuro */
+  /* Primário sobre fundo claro: #225347 com texto branco, hover #163932 */
+  escuro: 'bg-ink-500 text-white hover:bg-ink-700',
+  /* Secundário sobre fundo claro: fundo transparente, borda e texto #225347 */
+  contorno: 'border border-ink-500 text-ink-500 hover:bg-ink-500/8',
+  /* Secundário sobre a faixa de destaque: sobre #8EB69A o verde #225347 só
+     alcança 3.88:1, abaixo do mínimo AA, então o contorno usa o tom mais
+     profundo da paleta (7.54:1). */
+  contornoEscuro: 'border border-ink-950/45 text-ink-950 hover:border-ink-950 hover:bg-ink-950/8',
+  /* Secundário sobre fundo escuro */
   contornoClaro:
-    'border border-sage-500/40 text-sage-200 hover:border-sage-500 hover:bg-sage-500/10',
+    'border border-sage-500/45 text-sage-100 hover:border-sage-500 hover:bg-sage-500/12',
 };
 
 /**

@@ -43,7 +43,7 @@ export default function PaginaInicial() {
       <section className="superficie-escura relative overflow-hidden bg-ink-900 text-sage-100">
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_80%_at_82%_12%,rgb(47_106_80/0.55)_0%,rgb(16_43_34/0)_62%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_80%_at_82%_12%,rgb(34_83_71/0.55)_0%,rgb(10_43_38/0)_62%)]"
         />
         <FitasDecorativas />
 
@@ -57,9 +57,9 @@ export default function PaginaInicial() {
               Securitizadora · Presidente Prudente / SP
             </Eyebrow>
 
-            <h1 className="max-w-[12em] font-display text-[clamp(2.75rem,6vw,5.375rem)] leading-[1.02] font-bold tracking-[-0.015em] text-sage-100 motion-safe:animate-subir motion-safe:[animation-delay:0.14s]">
+            <h1 className="max-w-[12em] font-display text-[clamp(2.75rem,6vw,5.375rem)] leading-[1.02] font-bold tracking-[-0.015em] text-white motion-safe:animate-subir motion-safe:[animation-delay:0.14s]">
               Gestão estratégica de{" "}
-              <em className="text-sage-400 not-italic">capital</em> para
+              <em className="text-sage-500 not-italic">capital</em> para
               empresas.
             </h1>
 
@@ -108,7 +108,7 @@ export default function PaginaInicial() {
                     {item.rotulo}
                   </dt>
                   <dd
-                    className={`order-1 m-0 font-display text-[34px] leading-none font-bold text-sage-400 ${item.tabular ? "tabular" : ""}`}
+                    className={`order-1 m-0 font-display text-[34px] leading-none font-bold text-sage-500 ${item.tabular ? "tabular" : ""}`}
                   >
                     {item.valor}
                   </dd>
@@ -148,7 +148,7 @@ export default function PaginaInicial() {
                 <h3 className="font-sans text-[23px] leading-[1.22] font-semibold text-ink-900">
                   {pilar.titulo}
                 </h3>
-                <p className="font-sans text-[14.5px] leading-[1.62] text-ink-400">
+                <p className="font-sans text-[14.5px] leading-[1.62] text-ink-700">
                   {pilar.texto}
                 </p>
               </li>
@@ -180,7 +180,7 @@ export default function PaginaInicial() {
                 Critério antes de capital.
               </h2>
             </div>
-            <p className="max-w-[32em] font-sans text-lg leading-[1.7] text-ink-400">
+            <p className="max-w-[32em] font-sans text-lg leading-[1.7] text-ink-700">
               A Real Private nasce da necessidade de ir além das soluções
               financeiras tradicionais. Entendemos que capital, sem critério e
               análise, gera risco, não crescimento.
@@ -194,15 +194,15 @@ export default function PaginaInicial() {
             className="grid overflow-hidden rounded-[3px] border border-ink-950/12 md:grid-cols-2"
           >
             <div className="flex min-h-[260px] flex-col justify-center gap-4 bg-ink-900 px-8 py-14 sm:px-13 lg:min-h-[300px]">
-              <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.26em] text-sage-400/75 uppercase">
+              <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.26em] text-sage-500/90 uppercase">
                 Sem critério e análise
               </span>
-              <p className="font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.16] font-semibold text-sage-100">
+              <p className="font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.16] font-semibold text-white">
                 capital gera risco
               </p>
             </div>
             <div className="flex min-h-[260px] flex-col justify-center gap-4 bg-sage-500 px-8 py-14 sm:px-13 lg:min-h-[300px]">
-              <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.26em] text-ink-950/65 uppercase">
+              <span className="font-sans text-[10.5px] leading-none font-medium tracking-[0.26em] text-ink-950/80 uppercase">
                 Com critério e análise
               </span>
               <p className="font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.16] font-semibold text-ink-950">
@@ -242,7 +242,7 @@ export default function PaginaInicial() {
             </div>
             <Link
               href="/o-que-fazemos"
-              className="border-b border-ink-700/35 pt-1.5 pb-2 font-sans text-sm leading-none font-medium text-ink-700 transition-colors hover:border-ink-700"
+              className="border-b border-ink-500/35 pt-1.5 pb-2 font-sans text-sm leading-none font-medium text-ink-500 transition-colors hover:border-ink-500"
             >
               Ver detalhes de cada frente
             </Link>
@@ -263,7 +263,7 @@ export default function PaginaInicial() {
                       {solucao.titulo}
                     </span>
                   </span>
-                  <span className="max-w-[36em] font-sans text-[16.5px] leading-[1.7] text-ink-400">
+                  <span className="max-w-[36em] font-sans text-[16.5px] leading-[1.7] text-ink-700">
                     {solucao.resumo}
                   </span>
                 </Link>
@@ -286,13 +286,13 @@ export default function PaginaInicial() {
             >
               Quando faz sentido procurar a Real Private
             </h2>
-            <p className="max-w-[28em] font-sans text-[17px] leading-[1.7] text-ink-400">
+            <p className="max-w-[28em] font-sans text-[17px] leading-[1.7] text-ink-700">
               Quando a empresa precisa de capital para manter ou estruturar seu
               crescimento, sem comprometer sua saúde financeira.
             </p>
             <Link
               href="/para-empresas"
-              className="mt-2 border-b border-ink-700/35 pt-1.5 pb-2 font-sans text-sm leading-none font-medium text-ink-700 transition-colors hover:border-ink-700"
+              className="mt-2 border-b border-ink-500/35 pt-1.5 pb-2 font-sans text-sm leading-none font-medium text-ink-500 transition-colors hover:border-ink-500"
             >
               Ver o perfil das empresas atendidas
             </Link>
@@ -338,7 +338,7 @@ export default function PaginaInicial() {
           <h2
             id="seguranca"
             data-revelar
-            className="mb-14 max-w-[20em] font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.14] font-semibold text-sage-100"
+            className="mb-14 max-w-[20em] font-display text-[clamp(1.875rem,3vw,2.75rem)] leading-[1.14] font-semibold text-white"
           >
             O que sustenta cada operação
           </h2>
@@ -381,7 +381,7 @@ export default function PaginaInicial() {
                     <span className="absolute top-0 left-1/2 h-4 w-px -translate-x-1/2 bg-current" />
                   </span>
                 </summary>
-                <p className="max-w-[46em] pb-7 font-sans text-[15.5px] leading-[1.72] text-ink-400">
+                <p className="max-w-[46em] pb-7 font-sans text-[15.5px] leading-[1.72] text-ink-700">
                   {item.resposta}
                 </p>
               </details>
@@ -424,7 +424,7 @@ export default function PaginaInicial() {
               href={siteConfig.contato.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block border-b border-ink-700/30 font-sans text-base leading-[1.7] text-ink-700 transition-colors hover:border-ink-700"
+              className="mt-4 inline-block border-b border-ink-500/30 font-sans text-base leading-[1.7] text-ink-500 transition-colors hover:border-ink-500"
             >
               {siteConfig.contato.instagram.handle}
             </a>

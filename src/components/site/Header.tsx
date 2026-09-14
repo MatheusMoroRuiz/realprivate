@@ -29,7 +29,7 @@ export function Header() {
             href={whatsappUrl('Olá! Gostaria de falar com a Real Private.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-2.5 rounded-[2px] bg-sage-500 px-5 py-3.5 font-sans text-[13.5px] leading-none font-semibold whitespace-nowrap text-ink-950 transition-[background-color,transform] duration-200 hover:bg-sage-600 motion-safe:hover:-translate-y-px"
+            className="inline-flex min-h-11 items-center gap-2.5 rounded-[2px] bg-ink-500 px-5 py-3.5 font-sans text-[13.5px] leading-none font-semibold whitespace-nowrap text-white transition-[background-color,transform] duration-200 hover:bg-ink-700 motion-safe:hover:-translate-y-px"
           >
             <IconeWhatsApp tamanho={15} />
             WhatsApp
