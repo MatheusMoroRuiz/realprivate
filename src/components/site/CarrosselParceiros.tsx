@@ -68,14 +68,12 @@ function ItemParceiro({
 /**
  * Carrossel contínuo de parceiros.
  *
- * Roda sem uma linha de JavaScript: a faixa é uma animação CSS e o botão de
- * pausa é um `checkbox` visualmente estilizado, lido pelos seletores
- * `group-has-[:checked]`. Funciona com o JavaScript desligado.
+ * Roda sem uma linha de JavaScript: a faixa é uma animação CSS e funciona com
+ * o JavaScript desligado.
  *
- * Acessibilidade — a WCAG 2.2.2 exige um meio de pausar conteúdo que se move
- * sozinho por mais de cinco segundos. Aqui há três: o botão de pausa, o hover
- * e o foco do teclado. Com `prefers-reduced-motion` a faixa nem chega a se
- * mover, virando uma lista rolável na horizontal.
+ * Acessibilidade — a faixa pausa no hover e no foco do teclado. Com
+ * `prefers-reduced-motion` ela nem chega a se mover, virando uma lista rolável
+ * na horizontal.
  */
 export function CarrosselParceiros() {
   const metade = Array.from({ length: REPETICOES_POR_METADE }, () => parceiros).flat();
@@ -84,48 +82,21 @@ export function CarrosselParceiros() {
   return (
     <section
       aria-labelledby="parceiros"
-      className="group border-t border-ink-950/8 bg-canvas-alt py-16 lg:py-20"
+      className="border-t border-ink-950/8 bg-canvas-alt py-16 lg:py-20"
     >
       <Container>
-        <div data-revelar className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-[34em]">
-            <Eyebrow>Parceiros</Eyebrow>
-            <h2
-              id="parceiros"
-              className="mt-5 font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
-            >
-              Quem caminha com a Real Private
-            </h2>
-            <p className="mt-4 font-sans text-[16.5px] leading-[1.72] text-ink-700">
-              Nossa forma de trabalhar se apoia em uma rede de instituições e parceiros de mercado
-              construída ao longo de mais de duas décadas.
-            </p>
-          </div>
-
-          {/*
-            Controle de pausa sem JavaScript: o `checkbox` fica invisível e o
-            `label` é o botão. O estado é lido por `group-has-[:checked]`.
-          */}
-          <input type="checkbox" id="pausar-parceiros" className="sr-only" />
-          <label
-            htmlFor="pausar-parceiros"
-            className="inline-flex min-h-11 cursor-pointer items-center gap-2.5 rounded-[2px] border border-ink-950/20 px-4 py-2.5 font-sans text-[13px] leading-none font-medium text-ink-700 transition-colors select-none hover:border-ink-950/40 hover:text-ink-900 motion-reduce:hidden"
+        <div data-revelar className="max-w-[34em]">
+          <Eyebrow>Parceiros</Eyebrow>
+          <h2
+            id="parceiros"
+            className="mt-5 font-display text-[clamp(1.75rem,2.8vw,2.375rem)] leading-[1.18] font-semibold text-ink-900"
           >
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              aria-hidden="true"
-              className="shrink-0"
-            >
-              <rect x="3" y="2" width="3.5" height="12" rx="0.5" className="group-has-[:checked]:hidden" />
-              <rect x="9.5" y="2" width="3.5" height="12" rx="0.5" className="group-has-[:checked]:hidden" />
-              <path d="M4 2.5l9 5.5-9 5.5z" className="hidden group-has-[:checked]:block" />
-            </svg>
-            <span className="group-has-[:checked]:hidden">Pausar</span>
-            <span className="hidden group-has-[:checked]:inline">Retomar</span>
-          </label>
+            Quem caminha com a Real Private
+          </h2>
+          <p className="mt-4 font-sans text-[16.5px] leading-[1.72] text-ink-700">
+            Nossa forma de trabalhar se apoia em uma rede de instituições e parceiros de mercado
+            construída ao longo de mais de duas décadas.
+          </p>
         </div>
       </Container>
 
@@ -136,7 +107,7 @@ export function CarrosselParceiros() {
       <div
         className="mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] motion-reduce:overflow-x-auto motion-reduce:[mask-image:none]"
       >
-        <ul className="faixa-parceiros flex w-max items-center motion-safe:animate-desfilar hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] group-has-[:checked]:[animation-play-state:paused]">
+        <ul className="faixa-parceiros flex w-max items-center motion-safe:animate-desfilar hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
           {faixa.map((parceiro, indice) => (
             <ItemParceiro
               key={`${parceiro.nome}-${indice}`}
